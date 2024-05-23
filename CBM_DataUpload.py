@@ -206,12 +206,12 @@ class FileListApp:
         self.angle = 0
 
         # 표 생성
-        self.file_tree2 = ttk.Treeview(master, height=5, columns=('run'), show='headings')
+        self.file_tree2 = ttk.Treeview(master, height=5, columns='run', show='headings')
         self.file_tree2.heading('run', text='실행 중인 작업')
         self.file_tree2.column('run', width=100, anchor='center')
         self.file_tree2.grid(column=1, row=1, padx=10, pady=(280, 0), sticky='nwe')
 
-        # thread = threading.Thread(target=self.load_equipment_data_from_MySQL)
+        # thread = threading.Thread(target=self.mysql_load_equip_data)
         # thread.start()
         # self.close_button.grid(row=3, column=1, sticky='nw', pady=5, padx=10)
 
@@ -221,7 +221,7 @@ class FileListApp:
 
         if get_type == 'ALL':
             print('ALL')
-            self.equipment_data = self.load_equipment_data_from_MySQL()
+            self.equipment_data = self.mysql_load_equip_data()
             self.influx_connect = self.check_influxdb_connection()
 
         elif get_type == 'CSV':
@@ -265,7 +265,7 @@ class FileListApp:
         self.animation_canvas.grid_remove()
 
     # MySQL에서 장비 데이터 불러오는 함수
-    def load_equipment_data_from_MySQL(self):
+    def mysql_load_equip_data(self):
         print(' 결과 나와야하는데 ')
         """MySQL로부터 eqp_id, eqp_num을 로드하고 딕셔너리로 반환합니다."""
         try:
@@ -295,7 +295,7 @@ class FileListApp:
                 log_file.write('\n=============== Traceback 내용 ===============\n')
                 log_file.write(err_msg)
             root.destroy()
-            pass
+
             return {}  # 여기서 함수 종료
         try:
             cursor = connection.cursor()
@@ -435,7 +435,7 @@ class FileListApp:
                                   values=(file_type, file, file_start_time, file_end_time, file_count, file_status,
                                           file_size_kb_rounded, file_extension))
 
-        total_files = len(self.file_tree.get_children())
+
         # self.total_files_label.config(text=f"Done/Total: 0/{total_files}")
 
     # 파일 제외 처리 함수
@@ -490,8 +490,6 @@ class FileListApp:
                                     port=db_config['port'],
                                     database=db_config['database'])
 
-            # 데이터베이스 리스트를 가져와서 연결 확인
-            databases = client.get_list_database()
             client.close()
             return True
         except Exception as e:
@@ -505,7 +503,6 @@ class FileListApp:
             print(f"DB Connection Error: {e}")
             messagebox.showerror("InfluxDB 연결 실패", f"{e}")
             root.destroy()
-            pass
             return False
 
     # 업로드 버튼 클릭 이벤트 함수
@@ -628,11 +625,11 @@ class FileListApp:
 
                         # process.communicate()
                         with open(new_file_path, 'r') as f:
-                            countAll = sum(1 for _ in f)
+                            count_all = sum(1 for _ in f)
                             # 4에서 3으로 변경
-                            count = countAll - 3
+                            count = count_all - 3
 
-                            if countAll == 4:
+                            if count_all == 4:
                                 count = 0
 
                             # print(f"new_file_path: {new_file_path}, countAll: {countAll}, count: {count}")
@@ -725,7 +722,7 @@ class FileListApp:
                 self.log_file_upload(filename, start_time, end_time, count, status, size, extension)
                 print('돌려야하는 csv 들 : ', list(set(self.selected_files)))
                 print('얘네 갯수 : ', len(list(set(self.selected_files))))
-                pass
+
         except Exception as E:
             print('error : ', E)
             err_msg = traceback.format_exc()
@@ -740,7 +737,7 @@ class FileListApp:
             self.close_button['state'] = 'normal'
 
     # 업로드 결과를 MySQL에 저장 함수
-    def upload_to_MySQL(self):
+    def mysql_upload(self):
 
         try:
             mysql_config = self.read_db_config('connect.ini', 'MySQL')
@@ -764,8 +761,8 @@ class FileListApp:
 
             # MySQL에 삽입하기 위해 문자열 형식으로 변환 (예: 'YYYY-MM-DD HH:MM:SS')
             stime_str = stime_datetime.strftime('%Y-%m-%d %H:%M:%S')
-            nowTime = datetime.now()
-            nowTImeRound = nowTime.replace(microsecond=0)
+            now_time = datetime.now()
+            now_time_round = now_time.replace(microsecond=0)
 
             # total_files = len(self.file_tree.get_children())
             total_files = sum(
@@ -773,14 +770,14 @@ class FileListApp:
 
             # 업로드가 완료된 파일 정보를 tb_file_upload에 업로드
             sql = "INSERT INTO tb_file_upload (up_date, st_time, en_time, file_cnt, trsf_status, trsf_tp) VALUES (%s, %s, %s, %s, %s, %s)"
-            cursor.execute(sql, (datetime.now().date(), stime_str, nowTImeRound, total_files, "Done", "UL"))
+            cursor.execute(sql, (datetime.now().date(), stime_str, now_time_round, total_files, "Done", "UL"))
             print(self.stime, "start_time", stime_str)
             up_seq = cursor.lastrowid
             connection.commit()
 
             for index, item in enumerate(self.file_tree.get_children(), start=1):
                 file_info = self.file_tree.item(item, 'values')
-                file_type, filename, start_time, end_time, count, status, size, extension = file_info
+                file_type, filename, start_time, end_time, count, status, size, _ = file_info
 
                 if status == "선택":
                     continue
@@ -981,7 +978,7 @@ class FileListApp:
                 try:
 
                     if self.signal == 1:
-                        self.upload_to_MySQL()
+                        self.mysql_upload()
                         self.extract_data()
                     elif self.signal == 2:
                         self.open_csv()
@@ -1057,9 +1054,7 @@ class FileListApp:
         thread.start()
 
     def data_extraction_task(self):
-        print('경로입니다 @@', self.path)
         self.run_sub(self.path)
-        rtime = time.time() - self.stime
         self.hide_loading()
         self.file_tree2.delete("1")
         if self.fail_sig == 1:
@@ -1090,7 +1085,7 @@ class FileListApp:
 
             merged = os.path.join(value, 'output_merge.txt')
             arrayed = os.path.join(value, 'output_array.txt')
-            dateData = os.path.join(value, 'data by date')
+            date_data = os.path.join(value, 'data by date')
             works = os.path.join(value, 'output_works.txt')
             result = os.path.join(value, 'output_result.txt')
             sr_error = os.path.join(value, 'output_sr_error.txt')
@@ -1110,7 +1105,7 @@ class FileListApp:
             files_to_delete_ori = [
                 merged,
                 arrayed,
-                dateData,
+                date_data,
                 works,
                 result,
                 sr_error,
@@ -1123,7 +1118,7 @@ class FileListApp:
             files_to_delete_sub = [
                 merged,
                 arrayed,
-                dateData,
+                date_data,
                 works,
                 result,
                 sr_error,
@@ -1366,9 +1361,8 @@ class FileListApp:
                                 color_format = workbook.add_format({'bg_color': '#FFC0CB', 'font_color': '#8B0000'})
 
                                 # 범위 설정 (첫 번째 행은 헤더이므로 2행부터 시작)
-                                start_row, start_col = 1, 1
+                                start_row, _ = 1, 1
                                 end_row = len(df)
-                                end_col = df.shape[1] - 1
 
                                 # 범위 알파벳 변환
                                 column_range = print_columns_with_alphabet(file_path)
@@ -1395,7 +1389,7 @@ class FileListApp:
                     self.message_fail_color = '서식 지정 과정 중 오류가 발생하였습니다.'
                     for i in enumerate(xlsx_files):
                         os.remove(i)
-                    pass
+
                 """ 2024년 5월 22일 CSV 서식 지정 종료 """
                 if fixed_check == 'YES':
                     # CSV part
@@ -1717,7 +1711,7 @@ class FileListApp:
                             f.write(line)
                         else:
                             print('탐지불가')
-                            pass
+
 
             value = input_directory
 
@@ -2006,7 +2000,7 @@ class FileListApp:
                 TWTAFAL = True
                 VSWRFAL = True
                 RADAFAL = True
-                Anyonce = True
+                anyonce = True
                 # 0.*?
                 patterns = [
                     r'SR_RACED1_TXRXFAL=0.*?',
@@ -2092,34 +2086,34 @@ class FileListApp:
                             RADAFAL = True
                         if re.search(patterns[7], line):
                             TXRXFAL = False
-                            Anyonce = False
+                            anyonce = False
                             str_list.append(line.strip())
                         if re.search(patterns[8], line):
                             RPUFA = False
-                            Anyonce = False
+                            anyonce = False
                             str_list.append(line.strip())
                         if re.search(patterns[9], line):
                             ANTEFAL = False
-                            Anyonce = False
+                            anyonce = False
                             str_list.append(line.strip())
                         if re.search(patterns[10], line):
                             INTEFAL = False
-                            Anyonce = False
+                            anyonce = False
                             str_list.append(line.strip())
                         if re.search(patterns[11], line):
                             TWTAFAL = False
-                            Anyonce = False
+                            anyonce = False
                             str_list.append(line.strip())
                         if re.search(patterns[12], line):
                             VSWRFAL = False
-                            Anyonce = False
+                            anyonce = False
                             str_list.append(line.strip())
                         if re.search(patterns[13], line):
                             RADAFAL = False
-                            Anyonce = False
+                            anyonce = False
                             str_list.append(line.strip())
 
-                        if not Anyonce:
+                        if not anyonce:
                             #
                             if TXRXFAL and RPUFA and ANTEFAL and INTEFAL and TWTAFAL and VSWRFAL and RADAFAL:
                                 str_list.append(line.strip())
@@ -2127,7 +2121,7 @@ class FileListApp:
                                 resize(str_list[-1], str_list[0], match_list, 0)
                                 match_list = []
                                 str_list = []
-                                Anyonce = True
+                                anyonce = True
                             # 마지막 행 처리
                             if i == len(lines) - 1:
                                 if not (TXRXFAL and RPUFA and ANTEFAL and INTEFAL and TWTAFAL and VSWRFAL and RADAFAL):
@@ -2190,7 +2184,7 @@ class FileListApp:
                 Syncro = True
                 Avarad = True
                 Temperr = True
-                Anyonce = True
+                anyonce = True
 
                 patterns = [
                     r'TR_KUMSD1_SYNCRO=0.*?',
@@ -2240,24 +2234,24 @@ class FileListApp:
                             Temperr = True
                         if re.search(patterns[3], line):
                             Syncro = False
-                            Anyonce = False
+                            anyonce = False
                             str_list.append(line.strip())
                         if re.search(patterns[4], line):
                             Avarad = False
-                            Anyonce = False
+                            anyonce = False
                             str_list.append(line.strip())
                         if re.search(patterns[5], line):
                             Temperr = False
-                            Anyonce = False
+                            anyonce = False
                             str_list.append(line.strip())
 
-                        if not Anyonce:
+                        if not anyonce:
                             if Syncro and Avarad and Temperr:
                                 str_list.append(line.strip())
                                 resize(str_list[-1], str_list[0], match_list, 0)
                                 match_list = []
                                 str_list = []
-                                Anyonce = True
+                                anyonce = True
                             if i == len(lines) - 1:
                                 if Syncro == False or Avarad == False or Temperr == False:
                                     str_list.append(lines[len(lines) - 1].strip())
@@ -2374,8 +2368,7 @@ class FileListApp:
                 # 프로시저 호출 및 파라미터 설정
                 cursor.executemany("CALL cbmplus.sp_equip_working_history(%s, %s, %s, %s, %s, %s, %s)",
                                    working_history)
-
-            bd_till = []
+                
             print(error_path, result_path)
 
             with open(error_path, 'r') as file:
@@ -2418,14 +2411,14 @@ class FileListApp:
                         print('SR 데이터입니다.')
                         # 모든 줄이 1인 경우를 검사, 데이터를 집어넣지않는다.
 
-                        if self.check_TR(error_path) is True:
+                        if self.check_tr(error_path) is True:
                             print('모든 데이터 고장, 데이터 INSERT X')
                         # 고장이 끝난 지점이 존재하는 경우
-                        elif self.check_TR(error_path) is not True:
+                        elif self.check_tr(error_path) is not True:
                             print('고장이 끝난 지점이 존재합니다. update 하고 나머지 데이터 insert')
-                            print('고장이 끝난 지점', self.check_TR(error_path))
+                            print('고장이 끝난 지점', self.check_tr(error_path))
                             ftime = re.search(r"\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{6}",
-                                              self.check_TR(error_path)).group()
+                                              self.check_tr(error_path)).group()
                             print(ftime)
                             sql_query = f"UPDATE tb_equip_breakdown SET modr_id = 'SYSTEM', mod_dt = NOW(), bd_edt = '{ftime}', rp_edt = '{ftime}' WHERE eqp_id = '{eqp_id}' AND cpnt_id = '{cpnt_id}' AND bd_sdt = '{result[0][0]}';"
                             cursor.execute(sql_query)
@@ -2546,7 +2539,7 @@ class FileListApp:
             print()
         return bd_till
 
-    def check_TR(self, filename):
+    def check_tr(self, filename):
         # 전역 변수 설정
         syncro_found = False
         temper_found = False
@@ -2655,45 +2648,45 @@ class CheckDatabase:
         self.current_y = self.canvas_height // 2
         self.radius = 7
         self.angle = 0
-        self.animation_canvas_A = tk.Canvas(master, width=self.canvas_width, height=self.canvas_height)
-        self.animation_canvas_A.grid(row=2, column=0, pady=0, padx=80, sticky='w')
-        self.animation_canvas_A.grid_remove()
-        self.animation_canvas_B = tk.Canvas(master, width=self.canvas_width, height=self.canvas_height)
-        self.animation_canvas_B.grid(row=3, column=0, pady=0, padx=80, sticky='w')
-        self.animation_canvas_B.grid_remove()
+        self.animation_canvas_a = tk.Canvas(master, width=self.canvas_width, height=self.canvas_height)
+        self.animation_canvas_a.grid(row=2, column=0, pady=0, padx=80, sticky='w')
+        self.animation_canvas_a.grid_remove()
+        self.animation_canvas_b = tk.Canvas(master, width=self.canvas_width, height=self.canvas_height)
+        self.animation_canvas_b.grid(row=3, column=0, pady=0, padx=80, sticky='w')
+        self.animation_canvas_b.grid_remove()
 
         # Cheking 텍스트
-        self.loadingLabel_A = tk.Label(master)
-        self.loadingLabel_A.grid(row=2, column=0, pady=0, padx=120, sticky="w")
-        self.loadingLabel_A.grid_remove()
+        self.loading_label_a = tk.Label(master)
+        self.loading_label_a.grid(row=2, column=0, pady=0, padx=120, sticky="w")
+        self.loading_label_a.grid_remove()
 
         # Cheking 텍스트
-        self.loadingLabel_B = tk.Label(master)
-        self.loadingLabel_B.grid(row=3, column=0, pady=0, padx=120, sticky="w")
-        self.loadingLabel_B.grid_remove()
+        self.loading_label_b = tk.Label(master)
+        self.loading_label_b.grid(row=3, column=0, pady=0, padx=120, sticky="w")
+        self.loading_label_b.grid_remove()
 
         # 로딩중 출력
         self.dot = '.'
-        self.loadLabel_A()
-        self.loadLabel_B()
-        self.draw_rotating_circleA()
-        self.draw_rotating_circleB()
+        self.load_label_a()
+        self.load_label_b()
+        self.draw_rotating_circle_a()
+        self.draw_rotating_circle_b()
 
         # 성공
-        self.success_A = tk.Label(master, text="Successfully connected", font=("Arial", 12, "bold"), fg="green")
-        self.success_A.grid(row=2, column=0, sticky='w', pady=0, padx=120)
-        self.success_B = tk.Label(master, text="Successfully connected", font=("Arial", 12, "bold"), fg="green")
-        self.success_B.grid(row=3, column=0, sticky='w', pady=0, padx=120)
-        self.success_A.grid_remove()
-        self.success_B.grid_remove()
+        self.success_a = tk.Label(master, text="Successfully connected", font=("Arial", 12, "bold"), fg="green")
+        self.success_a.grid(row=2, column=0, sticky='w', pady=0, padx=120)
+        self.success_b = tk.Label(master, text="Successfully connected", font=("Arial", 12, "bold"), fg="green")
+        self.success_b.grid(row=3, column=0, sticky='w', pady=0, padx=120)
+        self.success_a.grid_remove()
+        self.success_b.grid_remove()
 
         # 실패
-        self.fail_A = tk.Label(master, text="Connection failed", font=("Arial", 12, "bold"), fg="red")
-        self.fail_A.grid(row=2, column=0, sticky='w', pady=0, padx=120)
-        self.fail_B = tk.Label(master, text="Connection failed", font=("Arial", 12, "bold"), fg="red")
-        self.fail_B.grid(row=3, column=0, sticky='w', pady=0, padx=120)
-        self.fail_A.grid_remove()
-        self.fail_B.grid_remove()
+        self.fail_a = tk.Label(master, text="Connection failed", font=("Arial", 12, "bold"), fg="red")
+        self.fail_a.grid(row=2, column=0, sticky='w', pady=0, padx=120)
+        self.fail_b = tk.Label(master, text="Connection failed", font=("Arial", 12, "bold"), fg="red")
+        self.fail_b.grid(row=3, column=0, sticky='w', pady=0, padx=120)
+        self.fail_a.grid_remove()
+        self.fail_b.grid_remove()
 
         # 텍스트
         self.information = tk.Label(master, text="현재 DB 접속 설정을 확인 중입니다. 기다려주십시요.", font=("Arial", 10))
@@ -2750,8 +2743,8 @@ class CheckDatabase:
         # self.fail_logo.grid(row=3, column=0, sticky='w', pady=0, padx=20)
 
         # 연결 성공 여부 확인
-        self.successMysql = False
-        self.successInflux = False
+        self.mysql_success_signal = False
+        self.influx_success_signal = False
 
         self.mysql_connection = None
         self.influx_connection = None
@@ -2766,20 +2759,20 @@ class CheckDatabase:
         roots.var = False
         roots.destroy()
 
-    def dummyF(self):
+    def func_dummy(self):
         print('dummy : processing...')
 
         # 연결 실패 시, 실패 코드 주고 연결 실패 알림 울리고 로그 남기고 인트로 창 종료
 
     def check(self):
-        self.dummyF()
-        self.master.after(1000, self.check_MyDB)
-        self.check_InDB()
+        self.func_dummy()
+        self.master.after(1000, self.mysql_check)
+        self.influx_check()
         self.master.after(3000, self.info)
         self.master.after(7000, self.run_program)
 
     def run_program(self):
-        if self.successMysql and self.successInflux:
+        if self.mysql_success_signal and self.influx_success_signal:
             roots.var = True
             roots.destroy()
         else:
@@ -2787,7 +2780,7 @@ class CheckDatabase:
             roots.destroy()
 
     def info(self):
-        if self.successMysql and self.successInflux:
+        if self.mysql_success_signal and self.influx_success_signal:
             self.information.grid_remove()
             self.waiting.grid()
 
@@ -2797,51 +2790,51 @@ class CheckDatabase:
             messagebox.showerror('연결 실패', 'log 폴더 내 오류를 확인해주십시요.')
 
     def show(self):
-        self.animation_canvas_A.grid()
-        self.animation_canvas_B.grid()
-        self.loadingLabel_A.grid()
-        self.loadingLabel_B.grid()
+        self.animation_canvas_a.grid()
+        self.animation_canvas_b.grid()
+        self.loading_label_a.grid()
+        self.loading_label_b.grid()
 
-    def loadLabel_A(self):
+    def load_label_a(self):
         if self.dot == "........":
             self.dot = '.'
         self.dot += self.dot
-        self.loadingLabel_A.config(text="Loading" + self.dot, font=("Helvetica", 12, "bold"))
-        self.loader = self.loadingLabel_A.after(1000, self.loadLabel_A)
+        self.loading_label_a.config(text="Loading" + self.dot, font=("Helvetica", 12, "bold"))
+        self.loader = self.loading_label_a.after(1000, self.load_label_a)
 
-    def loadLabel_B(self):
+    def load_label_b(self):
         if self.dot == "........":
             self.dot = '.'
         self.dot += self.dot
-        self.loadingLabel_B.config(text="Loading" + self.dot, font=("Helvetica", 12, "bold"))
-        self.loader = self.loadingLabel_B.after(1000, self.loadLabel_B)
+        self.loading_label_b.config(text="Loading" + self.dot, font=("Helvetica", 12, "bold"))
+        self.loader = self.loading_label_b.after(1000, self.load_label_b)
 
-    def ifSuccess_mysql(self):
-        self.success_A.grid()
-        self.loadingLabel_A.grid_remove()
-        self.animation_canvas_A.grid_remove()
-        self.successMysql = True
-        self.animation_canvas_A.grid_remove()
+    def mysql_if_success(self):
+        self.success_a.grid()
+        self.loading_label_a.grid_remove()
+        self.animation_canvas_a.grid_remove()
+        self.mysql_success_signal = True
+        self.animation_canvas_a.grid_remove()
         self.success_logo_label.grid(row=2, column=0, sticky='w', pady=0, padx=80)
 
-    def ifSuccess_influx(self):
-        self.success_B.grid()
-        self.loadingLabel_B.grid_remove()
-        self.animation_canvas_B.grid_remove()
-        self.successInflux = True
-        self.animation_canvas_B.grid_remove()
+    def influx_if_success(self):
+        self.success_b.grid()
+        self.loading_label_b.grid_remove()
+        self.animation_canvas_b.grid_remove()
+        self.influx_success_signal = True
+        self.animation_canvas_b.grid_remove()
         self.success_logo_label2.grid(row=3, column=0, sticky='w', pady=0, padx=80)
 
-    def ifFail_mysql(self):
-        self.fail_A.grid()
-        self.loadingLabel_A.grid_remove()
-        self.animation_canvas_A.grid_remove()
+    def mysql_if_failed(self):
+        self.fail_a.grid()
+        self.loading_label_a.grid_remove()
+        self.animation_canvas_a.grid_remove()
         self.fail_logo_label.grid(row=2, column=0, sticky='w', pady=0, padx=80)
 
-    def ifFail_influx(self):
-        self.fail_B.grid()
-        self.loadingLabel_B.grid_remove()
-        self.animation_canvas_B.grid_remove()
+    def influx_if_failed(self):
+        self.fail_b.grid()
+        self.loading_label_b.grid_remove()
+        self.animation_canvas_b.grid_remove()
         self.fail_logo_label.grid(row=3, column=0, sticky='w', pady=0, padx=80)
 
     def error_logging(self, e):
@@ -2864,7 +2857,7 @@ class CheckDatabase:
             raise Exception(f'{section} not found in the {filename} file')
         return db
 
-    def check_MyDB(self):
+    def mysql_check(self):
         try:
             mysql_config = self.read_db_config('connect.ini', 'MySQL')
             self.mysql_connection = mysql.connector.connect(
@@ -2875,14 +2868,14 @@ class CheckDatabase:
                 database=mysql_config['database'],
                 connect_timeout=15
             )
-            self.ifSuccess_mysql()
-            self.successMysql = True
+            self.mysql_if_success()
+            self.mysql_success_signal = True
         except Exception as e:
             self.error_logging(e)
-            self.ifFail_mysql()
-            self.successMysql = False
+            self.mysql_if_failed()
+            self.mysql_success_signal = False
 
-    def check_InDB(self):
+    def influx_check(self):
         try:
             db_config = self.read_db_config()
             influx_exe_path = os.path.join(db_config['path'], 'influx.exe')
@@ -2894,33 +2887,33 @@ class CheckDatabase:
                 database=db_config['dbname'],
                 timeout=15
             )
-            result = self.influx_connection.get_list_database()
-            self.ifSuccess_influx()
-            self.successInflux = True
+
+            self.influx_if_success()
+            self.influx_success_signal = True
         except Exception as e:
             self.error_logging(e)
-            self.ifFail_influx()
-            self.successInflux = False
+            self.influx_if_failed()
+            self.influx_success_signal = False
 
-    def draw_rotating_circleA(self):
-        self.animation_canvas_A.delete("rotating_circle")
+    def draw_rotating_circle_a(self):
+        self.animation_canvas_a.delete("rotating_circle")
         self.angle += 1
         x0 = self.current_x + self.radius * math.cos(math.radians(self.angle))
         y0 = self.current_y + self.radius * math.sin(math.radians(self.angle))
         x1 = self.current_x - self.radius * math.cos(math.radians(self.angle))
         y1 = self.current_y - self.radius * math.sin(math.radians(self.angle))
-        self.animation_canvas_A.create_line(x0, y0, x1, y1, fill="orange", width=4, tags="rotating_circle")
-        self.master.after(1, self.draw_rotating_circleA)
+        self.animation_canvas_a.create_line(x0, y0, x1, y1, fill="orange", width=4, tags="rotating_circle")
+        self.master.after(1, self.draw_rotating_circle_a)
 
-    def draw_rotating_circleB(self):
-        self.animation_canvas_B.delete("rotating_circle")
+    def draw_rotating_circle_b(self):
+        self.animation_canvas_b.delete("rotating_circle")
         self.angle += 1
         x0 = self.current_x + self.radius * math.cos(math.radians(self.angle))
         y0 = self.current_y + self.radius * math.sin(math.radians(self.angle))
         x1 = self.current_x - self.radius * math.cos(math.radians(self.angle))
         y1 = self.current_y - self.radius * math.sin(math.radians(self.angle))
-        self.animation_canvas_B.create_line(x0, y0, x1, y1, fill="orange", width=4, tags="rotating_circle")
-        self.master.after(1, self.draw_rotating_circleB)
+        self.animation_canvas_b.create_line(x0, y0, x1, y1, fill="orange", width=4, tags="rotating_circle")
+        self.master.after(1, self.draw_rotating_circle_b)
 
     def update_label(self):
         if self.time_left > 0:
@@ -2972,9 +2965,9 @@ class CheckCSV:
         self.current_y = self.canvas_height // 2
         self.radius = 12.5
         self.angle = 0
-        self.animation_canvas_A = tk.Canvas(master, width=self.canvas_width, height=self.canvas_height)
-        self.animation_canvas_A.grid(row=2, column=0, pady=(15, 0), padx=(270, 0), sticky='n')
-        # self.animation_canvas_A.grid_remove()
+        self.animation_canvas_a = tk.Canvas(master, width=self.canvas_width, height=self.canvas_height)
+        self.animation_canvas_a.grid(row=2, column=0, pady=(15, 0), padx=(270, 0), sticky='n')
+        # self.animation_canvas_a.grid_remove()
 
         # 텍스트
         self.information = tk.Label(master, text="CSV 변환/결합 프로그램이 시작됩니다.", font=("Arial", 10))
@@ -2989,7 +2982,7 @@ class CheckCSV:
         self.mysql_logo_label.config(width=50, height=50)
         self.mysql_logo_label.grid(row=2, column=0, sticky='w', pady=0, padx=20)
 
-        self.draw_rotating_circleA()
+        self.draw_rotating_circle_a()
 
         thread1 = threading.Thread(target=self.run)
         thread1.start()
@@ -3001,15 +2994,15 @@ class CheckCSV:
         croots.var = True
         croots.destroy()
 
-    def draw_rotating_circleA(self):
-        self.animation_canvas_A.delete("rotating_circle")
+    def draw_rotating_circle_a(self):
+        self.animation_canvas_a.delete("rotating_circle")
         self.angle += 1
         x0 = self.current_x + self.radius * math.cos(math.radians(self.angle))
         y0 = self.current_y + self.radius * math.sin(math.radians(self.angle))
         x1 = self.current_x - self.radius * math.cos(math.radians(self.angle))
         y1 = self.current_y - self.radius * math.sin(math.radians(self.angle))
-        self.animation_canvas_A.create_line(x0, y0, x1, y1, fill="orange", width=4, tags="rotating_circle")
-        self.master.after(1, self.draw_rotating_circleA)
+        self.animation_canvas_a.create_line(x0, y0, x1, y1, fill="orange", width=4, tags="rotating_circle")
+        self.master.after(1, self.draw_rotating_circle_a)
 
     def close_window(self):
         croots.var = False
