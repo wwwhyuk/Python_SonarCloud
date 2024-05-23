@@ -1,7 +1,5 @@
-CBM_DataUpload.FileListApp.execute_thread
-print
+CBM_DataUpload.FileListApp.animations
+time.time
 ==
-make_csv
-refresh_connection
-showinfo
-delete
+progressing
+animate_loading1

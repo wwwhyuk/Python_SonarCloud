@@ -1,5 +1,4 @@
-CBM_DataUpload.CheckDatabase.info
+CBM_DataUpload.CheckDatabase.load_label_b
 ==
-grid
-grid_remove
-showerror
+after
+config

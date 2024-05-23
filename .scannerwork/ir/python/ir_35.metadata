@@ -1,5 +1,5 @@
-CBM_DataUpload.FileListApp.main.process_single_file_TR.match_append
-re.search
-==
-append
-group
+CBM_DataUpload.FileListApp.move_files_to_directory
+print
+os.path.basename
+os.path.join
+shutil.move

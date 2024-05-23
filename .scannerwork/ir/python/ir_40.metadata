@@ -1,3 +1,2 @@
-CBM_DataUpload.FileListApp.close_window
-==
-destroy
+CBM_DataUpload.CheckDatabase.func_dummy
+print

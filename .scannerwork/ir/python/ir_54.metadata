@@ -1,6 +1,5 @@
-CBM_DataUpload.CheckDatabase.read_db_config
-configparser.ConfigParser.__init__
+CBM_DataUpload.CheckDatabase.update_label
 ==
-read
-has_section
-items
+destroy
+showerror
+after

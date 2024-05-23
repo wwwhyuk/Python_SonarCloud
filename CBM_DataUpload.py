@@ -65,7 +65,8 @@ class FileListApp:
 
         # 2024년 5월 23일
         self.file_select_signal = 1
-
+        self.connect_ini_file_name = 'connect.ini'
+        self.traceback_str = '\n=============== Traceback 내용 ===============\n'
         # var
         self.signal = 0  # 데이터 업로드인지, csv 변환인지 분기
 
@@ -212,7 +213,7 @@ class FileListApp:
         self.file_tree2.grid(column=1, row=1, padx=10, pady=(280, 0), sticky='nwe')
 
         config = configparser.ConfigParser()
-        config.read('connect.ini', 'UTF-8')
+        config.read(self.connect_ini_file_name, 'UTF-8')
         get_type = config.get('Program', 'type')
 
         if get_type == 'ALL':
@@ -266,7 +267,7 @@ class FileListApp:
         """MySQL로부터 eqp_id, eqp_num을 로드하고 딕셔너리로 반환합니다."""
         try:
             # MySQL 연결 설정
-            mysql_config = self.read_db_config('connect.ini', 'MySQL')
+            mysql_config = self.read_db_config(self.connect_ini_file_name, 'MySQL')
 
             # print(f"MySQL 연결 정보: {mysql_config['host']}//{mysql_config['port']}//{mysql_config['user']}//{mysql_config['password']}//{mysql_config['database']}")
 
@@ -288,7 +289,7 @@ class FileListApp:
             log_file_path = f'log/{datetime.now().strftime("%Y년%m월%d일%H시%M분%S초")}_MySqlError.log'
             with open(log_file_path, 'w') as log_file:
                 log_file.write(str(error))
-                log_file.write('\n=============== Traceback 내용 ===============\n')
+                log_file.write('self.traceback_str')
                 log_file.write(err_msg)
             root.destroy()
 
@@ -356,8 +357,6 @@ class FileListApp:
         self.new_filename = ''
         self.get_cpnt_id = ''
         self.fail_sig = 0
-        print('돌려야하는 csv 들 : ', list(set(self.unselect_files)))
-        print('얘네 갯수 : ', len(list(set(self.unselect_files))))
         self.connectiond = None
         # 인플럭스DB 연결 확인
         # if not self.check_influxdb_connection():
@@ -493,7 +492,7 @@ class FileListApp:
             log_file_path = f'log/{datetime.now().strftime("%Y년%m월%d일%H시%M분%S초")}_InfluxdbError.log'
             with open(log_file_path, 'w') as log_file:
                 log_file.write(str(e))
-                log_file.write('\n=============== Traceback 내용 ===============\n')
+                log_file.write('self.traceback_str')
                 log_file.write(err_msg)
             print(f"DB Connection Error: {e}")
             messagebox.showerror("InfluxDB 연결 실패", f"{e}")
@@ -552,7 +551,7 @@ class FileListApp:
         while not self.upload_queue.empty():
             i, item = self.upload_queue.get()
             try:
-                self.upload_file(i, item, sig)
+                self.upload_file(item, sig)
             finally:
                 self.upload_queue.task_done()
 
@@ -712,8 +711,6 @@ class FileListApp:
                 print(file_info, "uploaded files")
                 # 로그에 파일 정보 기록
                 self.log_file_upload(filename, start_time, end_time, count, status, size, extension)
-                print('돌려야하는 csv 들 : ', list(set(self.selected_files)))
-                print('얘네 갯수 : ', len(list(set(self.selected_files))))
 
         except Exception as E:
             print('error : ', E)
@@ -722,7 +719,7 @@ class FileListApp:
             log_file_path = f'log/{datetime.now().strftime("%Y년%m월%d일%H시%M분%S초")}_TranslateError.log'
             with open(log_file_path, 'w') as log_file:
                 log_file.write(str(E))
-                log_file.write('\n=============== Traceback 내용 ===============\n')
+                log_file.write('self.traceback_str')
                 log_file.write(err_msg)
             messagebox.showinfo("오류", f"아래와 같은 오류가 발생하였습니다. log 폴더 내 log 파일을 확인해주십시요.\n{E}")
             messagebox.showinfo("오류", "가급적 종료하여 주시고, 오류 해결 후 실행해주십시요.")
@@ -732,7 +729,7 @@ class FileListApp:
     def mysql_upload(self):
 
         try:
-            mysql_config = self.read_db_config('connect.ini', 'MySQL')
+            mysql_config = self.read_db_config(self.connect_ini_file_name, 'MySQL')
 
             connection = mysql.connector.connect(
                 host=mysql_config['host'],
@@ -876,7 +873,7 @@ class FileListApp:
 
     # ini 파일에서 db커넥션 정보 가져오는 함수
     @staticmethod
-    def read_db_config(filename='connect.ini', section='InfluxDB'):
+    def read_db_config(filename, section):
         parser = configparser.ConfigParser()
         parser.read(filename, 'UTF-8')
         db = {}
@@ -947,7 +944,7 @@ class FileListApp:
                     log_file_path = f'log/{datetime.now().strftime("%Y년%m월%d일%H시%M분%S초")}_ProgressError.log'
                     with open(log_file_path, 'w') as log_file:
                         log_file.write(str(E))
-                        log_file.write('\n=============== Traceback 내용 ===============\n')
+                        log_file.write('self.traceback_str')
                         log_file.write(err_msg)
                     messagebox.showinfo("오류", f"아래와 같은 오류가 발생하였습니다. log 폴더 내 log 파일을 확인해주십시요.\n{E}")
                     messagebox.showinfo("오류", "가급적 종료하여 주시고, 오류 해결 후 실행해주십시요.")
@@ -1021,7 +1018,7 @@ class FileListApp:
             self.working_query(value, input_directory, output_directory)
 
             config = configparser.ConfigParser()
-            config.read('connect.ini', 'UTF-8')
+            config.read(self.connect_ini_file_name, 'UTF-8')
             get_type = config.get('Program', 'CHECK')
 
             merged = os.path.join(value, 'output_merge.txt')
@@ -1110,7 +1107,7 @@ class FileListApp:
             log_file_path = f'log/{datetime.now().strftime("%Y년%m월%d일%H시%M분%S초")}ProgressError.log'
             with open(log_file_path, 'w') as log_file:
                 log_file.write(str(E))
-                log_file.write('\n=============== Traceback 내용 ===============\n')
+                log_file.write('self.traceback_str')
                 log_file.write(err_msg)
             self.close_button['state'] = 'normal'
 
@@ -1213,7 +1210,7 @@ class FileListApp:
             # desktop_path = os.path.join(os.path.expanduser('~'), 'Desktop')
             # desktop_path = "C:\\Users\\rkfpt\\바탕 화면"
             config = configparser.ConfigParser()
-            config.read('connect.ini', 'UTF-8')
+            config.read(self.connect_ini_file_name, 'UTF-8')
             desktop_path = config.get('ExcelPath', 'path')
             fixed_check = config.get('Program', 'fixed_list')
             cell_check = config.get('Program', 'cell_condition')
@@ -1392,15 +1389,13 @@ class FileListApp:
             log_file_path = f'log/{datetime.now().strftime("%Y년%m월%d일%H시%M분%S초")}_CSVerror.log'
             with open(log_file_path, 'w') as log_file:
                 log_file.write(str(E))
-                log_file.write('\n=============== Traceback 내용 ===============\n')
+                log_file.write('self.traceback_str')
                 log_file.write(err_msg)
             messagebox.showinfo("오류", f"아래와 같은 오류가 발생하였습니다. log 폴더 내 log 파일을 확인해주십시요.\n{E}")
             messagebox.showinfo("오류", f"가급적 종료하여 주시고, 오류 해결 후 실행해주십시요.")
             self.close_button['state'] = 'normal'
 
     def open_csv(self):
-        print('돌려야하는 csv 들 : ', list(set(self.unselect_files)))
-        print('얘네 갯수 : ', len(list(set(self.unselect_files))))
         thread1 = threading.Thread(target=self.thread_open_csv)
         thread1.start()
         self.execute_translate_button['state'] = 'disabled'
@@ -1428,7 +1423,7 @@ class FileListApp:
             log_file_path = f'log/{datetime.now().strftime("%Y년%m월%d일%H시%M분%S초")}_CSVerror.log'
             with open(log_file_path, 'w') as log_file:
                 log_file.write(str(E))
-                log_file.write('\n=============== Traceback 내용 ===============\n')
+                log_file.write('self.traceback_str')
                 log_file.write(err_msg)
             messagebox.showinfo("오류", f"아래와 같은 오류가 발생하였습니다. log 폴더 내 log 파일을 확인해주십시요.\n{E}")
             messagebox.showinfo("오류", "가급적 종료하여 주시고, 오류 해결 후 실행해주십시요.")
@@ -1449,7 +1444,7 @@ class FileListApp:
         global mysql_connect
         global influx_connect
         # MySQL 연결 설정
-        mysql_config = self.read_db_config('connect.ini', 'MySQL')
+        mysql_config = self.read_db_config(self.connect_ini_file_name, 'MySQL')
         mysql_connect = mysql.connector.connect(
             host=mysql_config['host'],
             port=mysql_config['port'],
@@ -1461,7 +1456,7 @@ class FileListApp:
         )
 
         # InfluxDB 연결 설정
-        influx_config = self.read_db_config('connect.ini', 'InfluxDB')
+        influx_config = self.read_db_config(self.connect_ini_file_name, 'InfluxDB')
         influx_host = influx_config['host']
         influx_port = int(influx_config['port'])
         influx_dbname = influx_config['dbname']
@@ -1769,21 +1764,6 @@ class FileListApp:
             input_directory = os.path.join(value, 'data by date')
             output_file_path = os.path.join(value, 'output_works.txt')
             process_files(input_directory, output_file_path)
-
-            # def rearrange_strings(string_list):
-            #     timestamped_strings = [(re.findall(r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{6}', string)[0], string) for
-            #                            string in string_list]
-            #     sorted_strings = sorted(timestamped_strings, key=lambda x: x[0])
-            #     return [string for _, string in sorted_strings]
-            #
-            # with open(output_file_path, 'r') as file:
-            #     string_list = file.read().splitlines()
-            #
-            # result = rearrange_strings(string_list)
-            #
-            # with open(output_file_path, 'w') as file:
-            #     for string in result:
-            #         file.write(string + '\n')
 
             # 입력 파일과 출력 파일 지정
             input_file = os.path.join(value, 'output_works.txt')
@@ -2189,7 +2169,7 @@ class FileListApp:
 
     def working_query(self, value, error_path, result_path):
         try:
-            mysql_config = self.read_db_config('connect.ini', 'MySQL')
+            mysql_config = self.read_db_config(self.connect_ini_file_name, 'MySQL')
             connection = mysql.connector.connect(
                 host=mysql_config['host'],
                 port=mysql_config['port'],
@@ -2474,6 +2454,8 @@ class FileListApp:
 
 class CheckDatabase:
     def __init__(self, master):
+        self.connect_ini_file_name = 'connect.ini'
+
         self.master = master
         self.master.title("천마 탐지추적장치 장비 데이터 업로드  V1.4.0\n[2024-05-22 Released]")
 
@@ -2702,10 +2684,10 @@ class CheckDatabase:
         log_file_path = f'log/{datetime.now().strftime("%Y년%m월%d일%H시%M분%S초")}ConnectionError.log'
         with open(log_file_path, 'w') as log_file:
             log_file.write(str(e))
-            log_file.write('\n=============== Traceback 내용 ===============\n')
+            log_file.write('self.traceback_str')
             log_file.write(err_msg)
 
-    def read_db_config(self, filename='connect.ini', section='InfluxDB'):
+    def read_db_config(self, filename, section):
         parser = configparser.ConfigParser()
         parser.read(filename, 'UTF-8')
         db = {}
@@ -2719,7 +2701,7 @@ class CheckDatabase:
 
     def mysql_check(self):
         try:
-            mysql_config = self.read_db_config('connect.ini', 'MySQL')
+            mysql_config = self.read_db_config(self.connect_ini_file_name, 'MySQL')
             self.mysql_connection = mysql.connector.connect(
                 host=mysql_config['host'],
                 port=mysql_config['port'],
@@ -2932,7 +2914,7 @@ if __name__ == '__main__':
                 log_file_path = f'log/{datetime.now().strftime("%Y년%m월%d일%H시%M분%S초")}ProgramError.log'
                 with open(log_file_path, 'w') as log_file:
                     log_file.write(str(E))
-                    log_file.write('\n=============== Traceback 내용 ===============\n')
+                    log_file.write('self.traceback_str')
                     log_file.write(err_msg)
 
     elif get_type == 'CSV':
@@ -2964,5 +2946,5 @@ if __name__ == '__main__':
                 log_file_path = f'log/{datetime.now().strftime("%Y년%m월%d일%H시%M분%S초")}ProgramError.log'
                 with open(log_file_path, 'w') as log_file:
                     log_file.write(str(E))
-                    log_file.write('\n=============== Traceback 내용 ===============\n')
+                    log_file.write('self.traceback_str')
                     log_file.write(err_msg)

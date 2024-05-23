@@ -1,11 +1,2 @@
-CBM_DataUpload.로딩화면설정
-==
-winfo_screenheight
-winfo_reqheight
-winfo_reqwidth
-mainloop
-winfo_screenwidth
-overrideredirect
-update
-geometry
-attributes
+D:\python\Python_SonarQube\main.#__main__
+main.print_hi

@@ -1,4 +1,4 @@
-CBM_DataUpload.CheckDatabase.mysql_if_success
+CBM_DataUpload.CheckDatabase.influx_if_failed
 ==
 grid
 grid_remove

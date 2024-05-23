@@ -1,8 +1,7 @@
-CBM_DataUpload.FileListApp.main.process_single_file_SR.resize
-print
+CBM_DataUpload.FileListApp.main.process_single_file_TR.resize
 map.__init__
 re.search
-CBM_DataUpload.FileListApp.main.process_single_file_SR.match_append
+CBM_DataUpload.FileListApp.main.process_single_file_TR.match_append
 ==
 join
 write

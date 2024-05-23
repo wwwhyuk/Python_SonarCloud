@@ -1,4 +1,4 @@
-CBM_DataUpload.CheckDatabase.load_label_a
+CBM_DataUpload.CheckDatabase.influx_if_success
 ==
-after
-config
+grid
+grid_remove

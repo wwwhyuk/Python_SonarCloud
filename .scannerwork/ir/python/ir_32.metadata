@@ -1,6 +1,5 @@
-CBM_DataUpload.FileListApp.main.find_and_print_find
-reversed.__init__
+CBM_DataUpload.FileListApp.main.process_single_file_TR.match_append
 re.search
 ==
-rstrip
-write
+append
+group

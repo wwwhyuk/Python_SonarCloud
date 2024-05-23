@@ -1,6 +1,7 @@
-CBM_DataUpload.FileListApp.execute_insert
-threading.Thread.__init__
+CBM_DataUpload.FileListApp.execute_thread
+print
 ==
-start
-insert
-askquestion
+make_csv
+refresh_connection
+showinfo
+delete

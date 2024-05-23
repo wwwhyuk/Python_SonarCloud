@@ -1,5 +1,6 @@
-CBM_DataUpload.FileListApp.main.process_single_file_SR.match_append
-re.search
+CBM_DataUpload.FileListApp.create_timestamped_directory
+os.path.join
+os.makedirs
+datetime.datetime.now
 ==
-append
-group
+strftime

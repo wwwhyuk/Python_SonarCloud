@@ -1,3 +1,4 @@
-CBM_DataUpload.CheckDatabase.run_program
+CBM_DataUpload.CheckDatabase.load_label_a
 ==
-destroy
+after
+config

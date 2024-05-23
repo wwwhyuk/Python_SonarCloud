@@ -1,2 +1,5 @@
-CBM_DataUpload.CheckDatabase.func_dummy
-print
+CBM_DataUpload.CheckDatabase.info
+==
+grid
+grid_remove
+showerror

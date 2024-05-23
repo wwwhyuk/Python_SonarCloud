@@ -1,8 +1,6 @@
-CBM_DataUpload.FileListApp.main.process_single_file_TR.resize
-map.__init__
-re.search
-CBM_DataUpload.FileListApp.main.process_single_file_TR.match_append
+CBM_DataUpload.FileListApp.delete_directory
+os.remove
+os.path.isdir
+os.path.isfile
 ==
-join
-write
-group
+rmtree

@@ -4,7 +4,7 @@
 close_window$CBM_DataUpload.CheckCSV.close_windowH
 draw_rotating_circle_a.CBM_DataUpload.CheckCSV.draw_rotating_circle_a"
 runCBM_DataUpload.CheckCSV.run2
-run_program#CBM_DataUpload.CheckCSV.run_programè
+run_program#CBM_DataUpload.CheckCSV.run_program©
 CBM_DataUpload.FileListApp/
 __init__#CBM_DataUpload.FileListApp.__init__=
 animate_loading*CBM_DataUpload.FileListApp.animate_loading?
@@ -46,10 +46,7 @@ modify_csv%CBM_DataUpload.FileListApp.modify_csvM
 parse_timestamp*CBM_DataUpload.FileListApp.parse_timestamp5
 progressing&CBM_DataUpload.FileListApp.progressing/
 read_csv#CBM_DataUpload.FileListApp.read_csv;
-read_db_config)CBM_DataUpload.FileListApp.read_db_config=
-read_db_config2*CBM_DataUpload.FileListApp.read_db_config2=
-read_db_config3*CBM_DataUpload.FileListApp.read_db_config3?
-read_db_configss+CBM_DataUpload.FileListApp.read_db_configssC
+read_db_config)CBM_DataUpload.FileListApp.read_db_configC
 refresh_connection-CBM_DataUpload.FileListApp.refresh_connection-
 run_sub"CBM_DataUpload.FileListApp.run_sub3
 

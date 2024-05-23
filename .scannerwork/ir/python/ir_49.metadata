@@ -1,4 +1,4 @@
-CBM_DataUpload.CheckDatabase.load_label_b
+CBM_DataUpload.CheckDatabase.mysql_if_failed
 ==
-after
-config
+grid
+grid_remove

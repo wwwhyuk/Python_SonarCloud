@@ -1,3 +1,11 @@
-CBM_DataUpload.CheckCSV.run_program
+CBM_DataUpload.로딩화면설정
 ==
-destroy
+winfo_screenheight
+winfo_reqheight
+winfo_reqwidth
+mainloop
+winfo_screenwidth
+overrideredirect
+update
+geometry
+attributes

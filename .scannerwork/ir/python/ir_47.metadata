@@ -1,3 +1,4 @@
-CBM_DataUpload.CheckDatabase.show
+CBM_DataUpload.CheckDatabase.mysql_if_success
 ==
 grid
+grid_remove
