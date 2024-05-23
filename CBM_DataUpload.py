@@ -1123,7 +1123,6 @@ class FileListApp:
             self.close_button['state'] = 'normal'
 
     def read_csv(self, directory):
-        # for filename in self.unselect_files:
         for filename in self.selected_files:
             print(' 실행되어야 합니다. : \t', filename)
             if filename.endswith(".csv"):
@@ -1322,6 +1321,7 @@ class FileListApp:
                                          'criteria': 'between',
                                          'minimum': 0.5,
                                          'maximum': 1.5,
+                                         # 기존에 규칙이 중첩되는 것을 막기 위해 format을 그룹 지음.
                                          'format': color_format})
 
                                 # 변경 사항 저장
