@@ -1,0 +1,7 @@
+organization=wwwhyuk
+projectKey=wwwhyuk_Python_SonarCloud
+serverUrl=https://sonarcloud.io
+serverVersion=8.0.0.54555
+dashboardUrl=https://sonarcloud.io/dashboard?id=wwwhyuk_Python_SonarCloud
+ceTaskId=AY-kPWQXY8e9CB0smaHX
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AY-kPWQXY8e9CB0smaHX
