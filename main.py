@@ -17,6 +17,10 @@ if __name__ == '__main__':
     print_hi('wsws')
 
     print_hi('this')
+    print_hi('this')
+    print_hi('this')
+    print_hi('this')
+    print_hi('this')
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 "C:\Users\rkfpt\Downloads\sonar-scanner-cli-5.0.1.3006-windows\sonar-scanner-5.0.1.3006-windows\bin"
