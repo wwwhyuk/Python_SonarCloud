@@ -211,10 +211,6 @@ class FileListApp:
         self.file_tree2.column('run', width=100, anchor='center')
         self.file_tree2.grid(column=1, row=1, padx=10, pady=(280, 0), sticky='nwe')
 
-        # thread = threading.Thread(target=self.mysql_load_equip_data)
-        # thread.start()
-        # self.close_button.grid(row=3, column=1, sticky='nw', pady=5, padx=10)
-
         config = configparser.ConfigParser()
         config.read('connect.ini', 'UTF-8')
         get_type = config.get('Program', 'type')
@@ -434,9 +430,6 @@ class FileListApp:
             self.file_tree.insert('', 'end',
                                   values=(file_type, file, file_start_time, file_end_time, file_count, file_status,
                                           file_size_kb_rounded, file_extension))
-
-
-        # self.total_files_label.config(text=f"Done/Total: 0/{total_files}")
 
     # 파일 제외 처리 함수
     def mark_exclude(self):
@@ -957,7 +950,7 @@ class FileListApp:
                         log_file.write('\n=============== Traceback 내용 ===============\n')
                         log_file.write(err_msg)
                     messagebox.showinfo("오류", f"아래와 같은 오류가 발생하였습니다. log 폴더 내 log 파일을 확인해주십시요.\n{E}")
-                    messagebox.showinfo("오류", f"가급적 종료하여 주시고, 오류 해결 후 실행해주십시요.")
+                    messagebox.showinfo("오류", "가급적 종료하여 주시고, 오류 해결 후 실행해주십시요.")
                     self.close_button['state'] = 'normal'
 
         update_ui()
@@ -1008,7 +1001,7 @@ class FileListApp:
         self.file_tree2.delete("1")
         if self.fail_sig == 1:
             self.stop_signal = 1
-            messagebox.showerror("실패", f"데이터 업로드 실패!")
+            messagebox.showerror("실패", "데이터 업로드 실패!")
         elif self.fail_sig == 0:
             self.stop_signal = 1
             messagebox.showinfo("성공", f"데이터 업로드 완료!\n소요 시간 : {round(time.time() - self.starting_time)}초")
@@ -1106,8 +1099,7 @@ class FileListApp:
 
                 self.delete_directory(files_to_delete_sub)
             else:
-                pass
-            self.delete_directory(files_to_delete_ori)
+                self.delete_directory(files_to_delete_ori)
 
             self.flag = False
         except Exception as E:
@@ -1125,10 +1117,9 @@ class FileListApp:
     def read_csv(self, directory):
         for filename in self.selected_files:
             print(' 실행되어야 합니다. : \t', filename)
-            if filename.endswith(".csv"):
-                if "_IU_" in filename:  # 파일 이름에 "_IU_"가 포함되어 있는지 확인
-                    file_path = os.path.join(directory, filename)
-                    self.modify_csv(file_path)
+            if "_IU_" in filename and filename.endswith(".csv"):
+                file_path = os.path.join(directory, filename)
+                self.modify_csv(file_path)
 
     def modify_csv(self, file_path):
         temp_file = file_path + '.temp'
@@ -1330,8 +1321,6 @@ class FileListApp:
                                 print('\t FILE END : ', output_file)
                         print('파일리스트:', xlsx_files)
 
-                    elif cell_check == 'NO':
-                        pass
                 except Exception as E:
                     self.message_fail_color = '서식 지정 과정 중 오류가 발생하였습니다.'
                     for i in enumerate(xlsx_files):
@@ -1374,8 +1363,6 @@ class FileListApp:
                             wb.save(excel_file)
                         else:
                             print(f"파일을 찾을 수 없습니다: {excel_file}")
-                elif fixed_check == 'NO':
-                    pass
 
                 print('CSV FILE SUCCESS')
 
@@ -1444,7 +1431,7 @@ class FileListApp:
                 log_file.write('\n=============== Traceback 내용 ===============\n')
                 log_file.write(err_msg)
             messagebox.showinfo("오류", f"아래와 같은 오류가 발생하였습니다. log 폴더 내 log 파일을 확인해주십시요.\n{E}")
-            messagebox.showinfo("오류", f"가급적 종료하여 주시고, 오류 해결 후 실행해주십시요.")
+            messagebox.showinfo("오류", "가급적 종료하여 주시고, 오류 해결 후 실행해주십시요.")
             self.close_button['state'] = 'normal'
         print("모든 작업이 완료되었습니다.")
         self.select_folder_button['state'] = 'normal'
@@ -1458,23 +1445,11 @@ class FileListApp:
         self.file_tree2.delete("2")
         self.hide_loading()
 
-    def read_db_config2(self, filename='connect.ini', section='InfluxDB'):
-        parser = configparser.ConfigParser()
-        parser.read(filename, 'UTF-8')
-        db = {}
-        if parser.has_section(section):
-            items = parser.items(section)
-            for item in items:
-                db[item[0]] = item[1]
-        else:
-            raise Exception(f'{section} not found in the {filename} file')
-        return db
-
     def refresh_connection(self):
         global mysql_connect
         global influx_connect
         # MySQL 연결 설정
-        mysql_config = self.read_db_config2('connect.ini', 'MySQL')
+        mysql_config = self.read_db_config('connect.ini', 'MySQL')
         mysql_connect = mysql.connector.connect(
             host=mysql_config['host'],
             port=mysql_config['port'],
@@ -1486,7 +1461,7 @@ class FileListApp:
         )
 
         # InfluxDB 연결 설정
-        influx_config = self.read_db_config2('connect.ini', 'InfluxDB')
+        influx_config = self.read_db_config('connect.ini', 'InfluxDB')
         influx_host = influx_config['host']
         influx_port = int(influx_config['port'])
         influx_dbname = influx_config['dbname']
@@ -1598,32 +1573,7 @@ class FileListApp:
 
         self.stime = time.time()
         self.progressing()
-        self.animate_loading1(0)
-
-    def read_db_config3(self, filename='connect.ini', section='InfluxDB'):
-
-        parser = configparser.ConfigParser()
-        parser.read(filename, 'UTF-8')
-        db = {}
-        if parser.has_section(section):
-            items = parser.items(section)
-            for item in items:
-                db[item[0]] = item[1]
-        else:
-            raise Exception(f'{section} not found in the {filename} file')
-        return db
-
-    def read_db_configss(self, filename='connect.ini', section='InfluxDB'):
-        parser = configparser.ConfigParser()
-        parser.read(filename, 'UTF-8')
-        db = {}
-        if parser.has_section(section):
-            items = parser.items(section)
-            for item in items:
-                db[item[0]] = item[1]
-        else:
-            raise Exception(f'{section} not found in the {filename} file')
-        return db
+        self.animate_loading1()
 
     def main(self, input_directory):
         try:
@@ -1644,7 +1594,7 @@ class FileListApp:
 
                 return formatted_dt
 
-            def 시간_변환(input_file, output_file):
+            def time_translate(input_file, output_file):
                 with open(input_file, 'r') as f:
                     lines = f.readlines()
 
@@ -1727,7 +1677,7 @@ class FileListApp:
             delete_lines(os.path.join(value, 'output_merge.txt'), os.path.join(value, 'output_merge.txt'))
 
             # 시간이 걸리더라도 해야함. 개선 가능성은 ?
-            시간_변환(file_path, output_file=os.path.join(value, 'output_array.txt'))
+            time_translate(file_path, output_file=os.path.join(value, 'output_array.txt'))
 
             def rearrange_strings(string_list):
                 timestamped_strings = [(re.findall(r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{6}', string)[0], string) for
@@ -1756,7 +1706,7 @@ class FileListApp:
                     return date, line
                 return None, None
 
-            def collect_Date(value, file_path):
+            def date_collect(value, file_path):
                 # 'outputs' 폴더 생성
                 output_directory = os.path.join(value, 'data by date')
                 os.makedirs(output_directory, exist_ok=True)
@@ -1782,7 +1732,7 @@ class FileListApp:
                         output_file.writelines(data)
 
             input_directory = os.path.join(value, 'output_array.txt')
-            collect_Date(value, input_directory)
+            date_collect(value, input_directory)
 
             def find_and_print_find(pattern, lines, output_file):
                 found_first = False
@@ -1846,9 +1796,6 @@ class FileListApp:
                 for line in lines:
                     unix_timestamp_match = re.search(r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}.\d{6}', line)
                     if unix_timestamp_match:
-                        # unix_timestamp = int(unix_timestamp_match.group())
-                        # korean_time = convert_to_datetime(unix_timestamp)
-                        # line = line.replace(str(unix_timestamp), korean_time)
                         line = line.replace('iu_data,eqp_id=', '')
                         if 'SR_' in line:
                             line = re.sub(r'SR_.*? ', 'SR ', line)
@@ -2236,40 +2183,6 @@ class FileListApp:
             ind = os.path.join(value, 'output_array.txt')
             outd = os.path.join(value, 'output_tr_error.txt')
             process_single_file_TR(ind, outd)
-
-            # ind = os.path.join(value, 'output_sr_result.txt')
-            # outd = os.path.join(value, '탐지레이더_고장이력.txt')
-            # 시간_변환(ind, outd)
-            #
-            # ind = os.path.join(value, 'output_tr_result.txt')
-            # outd = os.path.join(value, '추적레이더_고장이력.txt')
-            # 시간_변환(ind, outd)
-
-            # ind = os.path.join(value, 'output_sr_error.txt')
-            # outd = os.path.join(value, 'output_sr_error.txt')
-            # 시간_변환(ind, outd)
-            #
-            # ind = os.path.join(value, 'output_tr_error.txt')
-            # outd = os.path.join(value, 'output_tr_error.txt')
-            # 시간_변환(ind, outd)
-
-            # def retry(inpath, outpath):
-            #     with open(inpath, 'r', encoding='latin-1') as f:
-            #         content = f.read()
-            #         if re.search(r'\b\d{19}\b', content):
-            #             logging.info('시간 변환이 덜 된 데이터가 존재합니다.')
-            #             시간_변환(inpath, outpath)
-            #         else:
-            #             logging.info('시간 변환이 완료된 데이터가 존재합니다.')
-
-            # ind = os.path.join(value, '탐지레이더_고장이력.txt')
-            # outd = os.path.join(value, '탐지레이더_고장이력.txt')
-            # retry(ind,outd)
-            #
-            # ind = os.path.join(value, '추적레이더_고장이력.txt')
-            # outd = os.path.join(value, '추적레이더_고장이력.txt')
-            # retry(ind, outd)
-
         except Exception as E:
             # TraceBack : traceback.print_exc()
             print('에러 유형 : ', str(E))
