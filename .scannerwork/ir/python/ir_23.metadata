@@ -1,8 +1,4 @@
 CBM_DataUpload.FileListApp.open_csv
-print
-len
-set.__init__
-list.__init__
 threading.Thread.__init__
 ==
 start
