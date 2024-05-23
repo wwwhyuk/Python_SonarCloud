@@ -1,6 +1,4 @@
 CBM_DataUpload.FileListApp.data_extraction_task
-print
-time.time
 ==
 run_sub
 hide_loading

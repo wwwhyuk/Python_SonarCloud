@@ -1,5 +1,5 @@
 CBM_DataUpload.CheckDatabase.check
 ==
-dummyF
+func_dummy
 after
-check_InDB
+influx_check

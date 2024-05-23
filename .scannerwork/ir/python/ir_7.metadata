@@ -1,6 +1,5 @@
 CBM_DataUpload.FileListApp.load_file_list
 round
-len
 os.path.join
 os.path.getsize
 os.path.splitext

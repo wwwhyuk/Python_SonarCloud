@@ -8,7 +8,6 @@ tkinter.Button.__init__
 os.path.exists
 ==
 read
-load_equipment_data_from_MySQL
 heading
 grid_remove
 column
@@ -22,4 +21,5 @@ grid
 get
 create_rectangle
 Progressbar
+mysql_load_equip_data
 Scrollbar

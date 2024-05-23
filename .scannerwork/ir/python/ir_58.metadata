@@ -4,7 +4,7 @@ tkinter.Label.__init__
 tkinter.Canvas.__init__
 threading.Thread.__init__
 ==
-draw_rotating_circleA
+draw_rotating_circle_a
 Button
 grid
 start

@@ -686,11 +686,11 @@ class FileListApp:
 
                         # process.communicate()
                         with open(new_file_path, 'r') as f:
-                            countAll = sum(1 for _ in f)
+                            count_all = sum(1 for _ in f)
                             # 4에서 3으로 변경
-                            count = countAll - 3
+                            count = count_all - 3
 
-                            if countAll == 4:
+                            if count_all == 4:
                                 count = 0
 
                             # print(f"new_file_path: {new_file_path}, countAll: {countAll}, count: {count}")
@@ -2381,7 +2381,7 @@ class FileListApp:
                 eqp_id = data[0]
                 if 'sr' in error_path:
                     cpnt_id = 'SR'
-                    bd_till = None
+                    # bd_till = None
                 elif 'tr' in error_path:
                     cpnt_id = 'TR'
 

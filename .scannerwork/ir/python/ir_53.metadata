@@ -1,4 +1,4 @@
-CBM_DataUpload.CheckDatabase.ifFail_influx
+CBM_DataUpload.CheckDatabase.influx_if_failed
 ==
 grid
 grid_remove
