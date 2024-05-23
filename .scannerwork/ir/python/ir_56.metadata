@@ -1,0 +1,8 @@
+CBM_DataUpload.CheckDatabase.draw_rotating_circleB
+math.radians
+math.sin
+math.cos
+==
+create_line
+after
+delete

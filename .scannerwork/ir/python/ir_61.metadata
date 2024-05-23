@@ -1,0 +1,8 @@
+CBM_DataUpload.CheckCSV.draw_rotating_circleA
+math.radians
+math.sin
+math.cos
+==
+create_line
+after
+delete

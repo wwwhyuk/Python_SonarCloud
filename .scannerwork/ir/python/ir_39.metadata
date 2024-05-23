@@ -1,0 +1,6 @@
+CBM_DataUpload.FileListApp.delete_directory
+os.remove
+os.path.isdir
+os.path.isfile
+==
+rmtree
