@@ -112,9 +112,7 @@ RDS.Client=
 sqlalchemy.orm.query.Query+
 filter!sqlalchemy.orm.query.Query.filterO
 pydantic.networks.Url6
-unicode_string$pydantic.networks.Url.unicode_stringU
-_typeshed.IdentityFunctionobject/
-__call__#_typeshed.IdentityFunction.__call__L
+unicode_string$pydantic.networks.Url.unicode_stringL
 !pandas.tseries.offsets.MonthBegin'pandas._libs.tslibs.offsets.MonthOffsetG
 _GetItemIterableobject+
 __getitem___GetItemIterable.__getitem__í
@@ -129,7 +127,8 @@ RDS.Client=
 nansys._hash_info.nan%
 	seed_bitssys._hash_info.seed_bits
 widthsys._hash_info.width
-inspect._emptyobject@
+inspect._emptyobjectL
+pandas.core.indexing._AtIndexer)pandas.core.indexing._ScalarAccessIndexer@
 "configparser.ExtendedInterpolationconfigparser.Interpolation5
 *pandas.errors.CategoricalConversionWarningWarningÍ
 tkinter.Checkbuttontkinter.Widget(
@@ -144,15 +143,100 @@ RDS.Client=
 configparser.InterpolationErrorconfigparser.Error4
 __init__(configparser.InterpolationError.__init__"option"section*
 option*	
-sectionn
+sectionµ
+pandas.core.arraylike.OpsMixinobject1
+__add__&pandas.core.arraylike.OpsMixin.__add__1
+__and__&pandas.core.arraylike.OpsMixin.__and__7
+
+__divmod__)pandas.core.arraylike.OpsMixin.__divmod__/
+__eq__%pandas.core.arraylike.OpsMixin.__eq__/
+__ge__%pandas.core.arraylike.OpsMixin.__ge__/
+__gt__%pandas.core.arraylike.OpsMixin.__gt__/
+__le__%pandas.core.arraylike.OpsMixin.__le__/
+__lt__%pandas.core.arraylike.OpsMixin.__lt__1
+__mod__&pandas.core.arraylike.OpsMixin.__mod__1
+__mul__&pandas.core.arraylike.OpsMixin.__mul__/
+__ne__%pandas.core.arraylike.OpsMixin.__ne__/
+__or__%pandas.core.arraylike.OpsMixin.__or__1
+__pow__&pandas.core.arraylike.OpsMixin.__pow__3
+__radd__'pandas.core.arraylike.OpsMixin.__radd__3
+__rand__'pandas.core.arraylike.OpsMixin.__rand__9
+__rdivmod__*pandas.core.arraylike.OpsMixin.__rdivmod__=
+__rfloordiv__,pandas.core.arraylike.OpsMixin.__rfloordiv__3
+__rmod__'pandas.core.arraylike.OpsMixin.__rmod__3
+__rmul__'pandas.core.arraylike.OpsMixin.__rmul__1
+__ror__&pandas.core.arraylike.OpsMixin.__ror__3
+__rpow__'pandas.core.arraylike.OpsMixin.__rpow__3
+__rsub__'pandas.core.arraylike.OpsMixin.__rsub__;
+__rtruediv__+pandas.core.arraylike.OpsMixin.__rtruediv__3
+__rxor__'pandas.core.arraylike.OpsMixin.__rxor__1
+__sub__&pandas.core.arraylike.OpsMixin.__sub__9
+__truediv__*pandas.core.arraylike.OpsMixin.__truediv__1
+__xor__&pandas.core.arraylike.OpsMixin.__xor__n
 _SupportsWriteAndFlushobject%
 flush_SupportsWriteAndFlush.flush%
 write_SupportsWriteAndFlush.writeY
 typing_extensions.Awaitableobject2
-	__await__%typing_extensions.Awaitable.__await__š
-pandas.core.series.PeriodSeriespandas.core.series.Series2
-__sub__'pandas.core.series.PeriodSeries.__sub__(
-dt"pandas.core.series.PeriodSeries.dt§
+	__await__%typing_extensions.Awaitable.__await__Ä
+"pandas.core.frame._LocIndexerFrame pandas.core.indexing._LocIndexer=
+__getitem__.pandas.core.frame._LocIndexerFrame.__getitem__=
+__setitem__.pandas.core.frame._LocIndexerFrame.__setitem__»
+#openpyxl.workbook.workbook.Workbookobject@
+__contains__0openpyxl.workbook.workbook.Workbook.__contains__>
+__delitem__/openpyxl.workbook.workbook.Workbook.__delitem__>
+__getitem__/openpyxl.workbook.workbook.Workbook.__getitem__8
+__init__,openpyxl.workbook.workbook.Workbook.__init__8
+__iter__,openpyxl.workbook.workbook.Workbook.__iter__4
+active*openpyxl.workbook.workbook.Workbook.activeF
+add_named_style3openpyxl.workbook.workbook.Workbook.add_named_style>
+chartsheets/openpyxl.workbook.workbook.Workbook.chartsheets2
+close)openpyxl.workbook.workbook.Workbook.closeD
+copy_worksheet2openpyxl.workbook.workbook.Workbook.copy_worksheetJ
+create_chartsheet5openpyxl.workbook.workbook.Workbook.create_chartsheetL
+create_named_range6openpyxl.workbook.workbook.Workbook.create_named_range@
+create_sheet0openpyxl.workbook.workbook.Workbook.create_sheet:
+	data_only-openpyxl.workbook.workbook.Workbook.data_only2
+epoch)openpyxl.workbook.workbook.Workbook.epochF
+excel_base_date3openpyxl.workbook.workbook.Workbook.excel_base_date:
+	get_index-openpyxl.workbook.workbook.Workbook.get_indexJ
+get_sheet_by_name5openpyxl.workbook.workbook.Workbook.get_sheet_by_nameF
+get_sheet_names3openpyxl.workbook.workbook.Workbook.get_sheet_names2
+index)openpyxl.workbook.workbook.Workbook.index:
+	mime_type-openpyxl.workbook.workbook.Workbook.mime_type<
+
+move_sheet.openpyxl.workbook.workbook.Workbook.move_sheet@
+named_styles0openpyxl.workbook.workbook.Workbook.named_styles:
+	read_only-openpyxl.workbook.workbook.Workbook.read_only4
+remove*openpyxl.workbook.workbook.Workbook.remove@
+remove_sheet0openpyxl.workbook.workbook.Workbook.remove_sheet0
+save(openpyxl.workbook.workbook.Workbook.save<
+
+sheetnames.openpyxl.workbook.workbook.Workbook.sheetnames>
+style_names/openpyxl.workbook.workbook.Workbook.style_names<
+
+worksheets.openpyxl.workbook.workbook.Workbook.worksheets<
+
+write_only.openpyxl.workbook.workbook.Workbook.write_only"calculation"	code_name"defined_names"encoding"is_template"	iso_dates"loaded_theme"path"
+properties"rels"security"shared_strings"template"vba_archive"views*
+calculation*
+	code_name*
+defined_names*
+
+encoding*
+is_template*
+	iso_dates*
+loaded_theme*
+path*
+
+properties*
+rels*
+
+security*
+shared_strings*
+
+template*
+vba_archive*
+views§
 tkinter.Radiobuttontkinter.Widget(
 __init__tkinter.Radiobutton.__init__*
 	configuretkinter.Radiobutton.configure(
@@ -162,9 +246,10 @@ RDS.Client=
 selecttkinter.Radiobutton.select"config*
 config•
 )pandas.tseries.offsets.CustomBusinessHour(pandas._libs.tslibs.offsets.BusinessHour>
-__init__2pandas.tseries.offsets.CustomBusinessHour.__init__p
-!pandas.core.series.IntervalSeriespandas.core.series.Series0
-array'pandas.core.series.IntervalSeries.array¥
+__init__2pandas.tseries.offsets.CustomBusinessHour.__init__š
+pandas.core.series.PeriodSeriespandas.core.series.Series2
+__sub__'pandas.core.series.PeriodSeries.__sub__(
+dt"pandas.core.series.PeriodSeries.dt¥
 reversedtyping.Iterator
 __init__reversed.__init__
 __iter__reversed.__iter__+
@@ -189,7 +274,9 @@ setdefault typing.MutableMapping.setdefault&
 updatetyping.MutableMapping.updatew
 shutil._RmtreeTypeobject'
 __call__shutil._RmtreeType.__call__"avoids_symlink_attacks*
-avoids_symlink_attacks„M
+avoids_symlink_attacksQ
+_typeshed.SupportsTruncobject.
+	__trunc__!_typeshed.SupportsTrunc.__trunc__„M
 pandas.core.frame.DataFramepandas.core.arraylike.OpsMixinpandas.core.generic.NDFrame"
 Tpandas.core.frame.DataFrame.T:
 __dataframe__)pandas.core.frame.DataFrame.__dataframe__8
@@ -412,28 +499,40 @@ tz_convert&pandas.core.frame.DataFrame.tz_convert6
 Name*
 
 __hash__*
-sparse™
-_typeshed.SupportsLenAndGetItemobject:
-__getitem__+_typeshed.SupportsLenAndGetItem.__getitem__2
-__len__'_typeshed.SupportsLenAndGetItem.__len__R
-&pandas.core.arrays.integer.UInt16Dtype(pandas.core.arrays.integer._IntegerDtype–
- _typeshed.SupportsKeysAndGetItemobject;
-__getitem__,_typeshed.SupportsKeysAndGetItem.__getitem__-
-keys%_typeshed.SupportsKeysAndGetItem.keys
+sparseR
+&pandas.core.arrays.integer.UInt16Dtype(pandas.core.arrays.integer._IntegerDtypeU
+_typeshed.SupportsReadlineobject/
+readline#_typeshed.SupportsReadline.readline
 
 ValueError	Exception¯
 configparser.ParsingErrorconfigparser.Error.
 __init__"configparser.ParsingError.__init__*
 append configparser.ParsingError.append"errors"source*
 errors*
-source1
+source“
+pandas.core.base.SelectionMixinobject:
+__getitem__+pandas.core.base.SelectionMixin.__getitem__,
+ndim$pandas.core.base.SelectionMixin.ndim1
 &pandas.errors.AttributeConflictWarningWarning,
 tkinter._InMiscNonTotaltyping._TypedDict©
 "configparser.DuplicateSectionErrorconfigparser.Error7
 __init__+configparser.DuplicateSectionError.__init__"lineno"section"source*
 lineno*	
 section*
-sourceÿ
+sourceú
+_typeshed.AbstractSettyping.Collection(
+__and___typeshed.AbstractSet.__and__2
+__contains__"_typeshed.AbstractSet.__contains__&
+__ge___typeshed.AbstractSet.__ge__&
+__gt___typeshed.AbstractSet.__gt__&
+__le___typeshed.AbstractSet.__le__&
+__lt___typeshed.AbstractSet.__lt__&
+__or___typeshed.AbstractSet.__or__(
+__sub___typeshed.AbstractSet.__sub__(
+__xor___typeshed.AbstractSet.__xor__$
+_hash_typeshed.AbstractSet._hash.
+
+isdisjoint _typeshed.AbstractSet.isdisjointÿ
 time.struct_timeobjecttuple#
 __new__time.struct_time.__new__'
 	tm_gmtofftime.struct_time.tm_gmtoff#
@@ -547,16 +646,15 @@ sys._flagsobjecttuple
 anypandas.arrays.BooleanArray.any+
 astype!pandas.arrays.BooleanArray.astype)
 dtype pandas.arrays.BooleanArray.dtype
-GeneratorExitBaseExceptionÎ
-%pandas.core.series._iLocIndexerSeries!pandas.core.indexing._iLocIndexer@
-__getitem__1pandas.core.series._iLocIndexerSeries.__getitem__@
-__setitem__1pandas.core.series._iLocIndexerSeries.__setitem__©
+GeneratorExitBaseExceptionH
+pandas.core.series.Int8Dtype(pandas.core.arrays.integer._IntegerDtypeQ
+_typeshed.SupportsAiterobject.
+	__aiter__!_typeshed.SupportsAiter.__aiter__©
 sys._thread_infoobjecttuple#
 __new__sys._thread_info.__new__
 locksys._thread_info.lock
 namesys._thread_info.name#
-versionsys._thread_info.versionH
-pandas.core.series.Int8Dtype(pandas.core.arrays.integer._IntegerDtype´
+versionsys._thread_info.version´
 strtyping.Sequence
 __add__str.__add__ 
 __contains__str.__contains__
@@ -655,7 +753,19 @@ substitutestring.Template.substitute"braceidpattern"	delimiter"flags"	idpatt
 
 templateˆ
 !collections._OrderedDictItemsViewtyping.ItemsViewtyping.Reversible>
-__reversed__.collections._OrderedDictItemsView.__reversed__,
+__reversed__.collections._OrderedDictItemsView.__reversed__
+_csv.Dialectobject!
+__init___csv.Dialect.__init__"	delimiter"doublequote"
+escapechar"lineterminator"	quotechar"quoting"skipinitialspace"strict*
+	delimiter*
+doublequote*
+
+escapechar*
+lineterminator*
+	quotechar*	
+quoting*
+skipinitialspace*
+strict,
 threading.BrokenBarrierErrorRuntimeError
 PermissionErrorOSError)
 pandas.errors.NumbaUtilError	Exceptionæ
@@ -848,21 +958,7 @@ $pandas.tseries.offsets.BQuarterBegin)pandas._libs.tslibs.offsets.QuarterOffset
 map%concurrent.futures._base.Executor.map6
 shutdown*concurrent.futures._base.Executor.shutdown2
 submit(concurrent.futures._base.Executor.submit'
-pandas.errors.CSSWarningUserWarningê
-(pandas.io.parsers.readers.TextFileReadertyping.Iterator?
-	__enter__2pandas.io.parsers.readers.TextFileReader.__enter__=
-__exit__1pandas.io.parsers.readers.TextFileReader.__exit__=
-__init__1pandas.io.parsers.readers.TextFileReader.__init__=
-__next__1pandas.io.parsers.readers.TextFileReader.__next__7
-close.pandas.io.parsers.readers.TextFileReader.close?
-	get_chunk2pandas.io.parsers.readers.TextFileReader.get_chunk5
-read-pandas.io.parsers.readers.TextFileReader.read"	chunksize"engine"handles"nrows"orig_options"squeeze*
-	chunksize*
-engine*	
-handles*
-nrows*
-orig_options*	
-squeezeÍ
+pandas.errors.CSSWarningUserWarningÍ
 os._TextIOWrapperio.TextIOBasetyping.TextIO(
 	__enter__os._TextIOWrapper.__enter__&
 __init__os._TextIOWrapper.__init__&
@@ -968,7 +1064,12 @@ send_event*
 __constraints__*
 __contravariant__*
 __covariant__*
-__default__.
+__default__ö
+ _typeshed.SupportsAllComparisonsobject1
+__ge__'_typeshed.SupportsAllComparisons.__ge__1
+__gt__'_typeshed.SupportsAllComparisons.__gt__1
+__le__'_typeshed.SupportsAllComparisons.__le__1
+__lt__'_typeshed.SupportsAllComparisons.__lt__.
 queue.LifoQueuequeue.Queue"queue*
 queueH
 %configparser.InterpolationSyntaxErrorconfigparser.InterpolationErrorO
@@ -1150,31 +1251,16 @@ ValueErroræ
 valuescsv._DictReadMapping.values"__hash__*
 
 __hash__
-RecursionErrorRuntimeErrorž
+RecursionErrorRuntimeErrorI
+_typeshed.SupportsItemsobject&
+items_typeshed.SupportsItems.itemsž
 tkinter.BaseWidgettkinter.Misc'
 __init__tkinter.BaseWidget.__init__%
 destroytkinter.BaseWidget.destroy"master"
 widgetName*
 master*
 
-widgetName¬
-pandas.core.frame.DataFrameXchgabc.ABC>
-__dataframe__-pandas.core.frame.DataFrameXchg.__dataframe__<
-column_names,pandas.core.frame.DataFrameXchg.column_names8
-
-get_chunks*pandas.core.frame.DataFrameXchg.get_chunks8
-
-get_column*pandas.core.frame.DataFrameXchg.get_columnH
-get_column_by_name2pandas.core.frame.DataFrameXchg.get_column_by_name:
-get_columns+pandas.core.frame.DataFrameXchg.get_columns4
-metadata(pandas.core.frame.DataFrameXchg.metadata8
-
-num_chunks*pandas.core.frame.DataFrameXchg.num_chunks:
-num_columns+pandas.core.frame.DataFrameXchg.num_columns4
-num_rows(pandas.core.frame.DataFrameXchg.num_rows@
-select_columns.pandas.core.frame.DataFrameXchg.select_columnsP
-select_columns_by_name6pandas.core.frame.DataFrameXchg.select_columns_by_name"version*	
-version”
+widgetName”
 os.statvfs_resultobjecttuple$
 __new__os.statvfs_result.__new__&
 f_bavailos.statvfs_result.f_bavail$
@@ -1188,7 +1274,9 @@ num_chunks*pandas.core.frame.DataFrameXchg.num_chunks:
 f_frsizeos.statvfs_result.f_frsize"
 f_fsidos.statvfs_result.f_fsid(
 	f_namemaxos.statvfs_result.f_namemax"__match_args__*
-__match_args__*
+__match_args__Q
+_typeshed.SupportsAnextobject.
+	__anext__!_typeshed.SupportsAnext.__anext__*
 pandas.errors.InvalidColumnNameWarning
 
 IndexErrorLookupErroræ
@@ -1288,10 +1376,19 @@ isAnchored,pandas.tseries.offsets.BaseOffset.isAnchored<
 rollforward-pandas.tseries.offsets.BaseOffset.rollforward8
 	rule_code+pandas.tseries.offsets.BaseOffset.rule_code"n*
 nI
-pandas.tseries.offsets.BYearEnd&pandas._libs.tslibs.offsets.YearOffsetM
-_typeshed.SupportsNextobject+
-__next___typeshed.SupportsNext.__next__
-	csv.Error	Exceptionž
+pandas.tseries.offsets.BYearEnd&pandas._libs.tslibs.offsets.YearOffset
+	csv.Error	ExceptionË
+"pandas.core.series.TimedeltaSeriespandas.core.series.Series5
+__add__*pandas.core.series.TimedeltaSeries.__add__5
+__mul__*pandas.core.series.TimedeltaSeries.__mul__7
+__radd__+pandas.core.series.TimedeltaSeries.__radd__5
+__sub__*pandas.core.series.TimedeltaSeries.__sub__=
+__truediv__.pandas.core.series.TimedeltaSeries.__truediv__+
+dt%pandas.core.series.TimedeltaSeries.dt/
+mean'pandas.core.series.TimedeltaSeries.mean3
+median)pandas.core.series.TimedeltaSeries.median-
+std&pandas.core.series.TimedeltaSeries.std+
+xs%pandas.core.series.TimedeltaSeries.xsž
 "pandas.plotting._core.PlotAccessorobject7
 __call__+pandas.plotting._core.PlotAccessor.__call__7
 __init__+pandas.plotting._core.PlotAccessor.__init__/
@@ -1306,16 +1403,9 @@ isAnchored,pandas.tseries.offsets.BaseOffset.isAnchored<
 pie&pandas.plotting._core.PlotAccessor.pie5
 scatter*pandas.plotting._core.PlotAccessor.scatter"density*	
 density0
- pandas.errors.PyperclipExceptionRuntimeErrorQ
-_typeshed.SupportsAiterobject.
-	__aiter__!_typeshed.SupportsAiter.__aiter__K
+ pandas.errors.PyperclipExceptionRuntimeErrorK
 typing.SupportsRoundobject+
-	__round__typing.SupportsRound.__round__ö
- _typeshed.SupportsAllComparisonsobject1
-__ge__'_typeshed.SupportsAllComparisons.__ge__1
-__gt__'_typeshed.SupportsAllComparisons.__gt__1
-__le__'_typeshed.SupportsAllComparisons.__le__1
-__lt__'_typeshed.SupportsAllComparisons.__lt__”
+	__round__typing.SupportsRound.__round__”
 sys.UnraisableHookArgsobject"err_msg"exc_traceback"exc_type"	exc_value"object*	
 err_msg*
 exc_traceback*
@@ -1323,9 +1413,7 @@ isAnchored,pandas.tseries.offsets.BaseOffset.isAnchored<
 exc_type*
 	exc_value*
 objectZ
--pandas.api.extensions.ExtensionScalarOpsMixin)pandas.core.arrays.base.ExtensionOpsMixinr
-pandas.core.series.OffsetSeriespandas.core.series.Series4
-__radd__(pandas.core.series.OffsetSeries.__radd__
+-pandas.api.extensions.ExtensionScalarOpsMixin)pandas.core.arrays.base.ExtensionOpsMixin
 UnboundLocalError	NameError½
 subprocess.TimeoutExpiredsubprocess.SubprocessError.
 __init__"subprocess.TimeoutExpired.__init__"cmd"output"stderr"stdout"timeout*
@@ -1385,8 +1473,10 @@ resolution
 varkwQ
 %pandas.core.arrays.integer.Int64Dtype(pandas.core.arrays.integer._IntegerDtype”
 %pandas.tseries.frequencies.DateOffset/pandas._libs.tslibs.offsets.RelativeDeltaOffset:
-__init__.pandas.tseries.frequencies.DateOffset.__init__I
- pandas.core.indexing._LocIndexer%pandas.core.indexing._LocationIndexerî
+__init__.pandas.tseries.frequencies.DateOffset.__init__â
+)pandas.core.indexing._ScalarAccessIndexer)pandas._libs.indexing._NDFrameIndexerBaseD
+__getitem__5pandas.core.indexing._ScalarAccessIndexer.__getitem__D
+__setitem__5pandas.core.indexing._ScalarAccessIndexer.__setitem__î
 tkinter.Gridobject-
 grid_configuretkinter.Grid.grid_configure'
 grid_forgettkinter.Grid.grid_forget#
@@ -1402,10 +1492,12 @@ resolution
 
 exceptionsExceptionGroup.exceptions
 splitExceptionGroup.split#
-subgroupExceptionGroup.subgroupM
-_typeshed.SupportsRAddobject+
-__radd___typeshed.SupportsRAdd.__radd__ 
-OverflowErrorArithmeticError÷
+subgroupExceptionGroup.subgroup 
+OverflowErrorArithmeticErrorM
+_typeshed.SupportsRSubobject+
+__rsub___typeshed.SupportsRSub.__rsub__C
+_typeshed.HasFilenoobject$
+fileno_typeshed.HasFileno.fileno÷
 datetime.timedeltaobject%
 __abs__datetime.timedelta.__abs__%
 __add__datetime.timedelta.__add__'
@@ -1484,17 +1576,12 @@ $pandas.api.extensions.ExtensionArrayobjectA
 __rxor__typing.KeysView.__rxor__"
 __sub__typing.KeysView.__sub__"
 __xor__typing.KeysView.__xor__
-InterruptedErrorOSErrorÈ
-#pandas.core.frame._iLocIndexerFrame!pandas.core.indexing._iLocIndexer>
-__getitem__/pandas.core.frame._iLocIndexerFrame.__getitem__>
-__setitem__/pandas.core.frame._iLocIndexerFrame.__setitem__
+InterruptedErrorOSError
 tkinter.XViewobject
 xviewtkinter.XView.xview*
 xview_movetotkinter.XView.xview_moveto*
 xview_scrolltkinter.XView.xview_scrollQ
 %pandas.core.arrays.integer.Int16Dtype(pandas.core.arrays.integer._IntegerDtypeI
-_typeshed.SupportsSubobject(
-__sub___typeshed.SupportsSub.__sub__I
 math._SupportsFloorobject*
 	__floor__math._SupportsFloor.__floor__Í
 threading.Timerthreading.Thread$
@@ -1535,12 +1622,16 @@ st_blksizeos.stat_result.st_blksize%
 st_rdevos.stat_result.st_rdev!
 st_sizeos.stat_result.st_size
 st_uidos.stat_result.st_uid"__match_args__*
-__match_args__Ç
+__match_args__g
+ pandas.core.indexing._IndexSliceobject;
+__getitem__,pandas.core.indexing._IndexSlice.__getitem__Ç
 )pandas.core.dtypes.dtypes.DatetimeTZDtype.pandas.core.dtypes.dtypes.PandasExtensionDtype>
 __init__2pandas.core.dtypes.dtypes.DatetimeTZDtype.__init__>
 na_value2pandas.core.dtypes.dtypes.DatetimeTZDtype.na_value2
 tz,pandas.core.dtypes.dtypes.DatetimeTZDtype.tz6
-unit.pandas.core.dtypes.dtypes.DatetimeTZDtype.unitË
+unit.pandas.core.dtypes.dtypes.DatetimeTZDtype.unitQ
+_typeshed.SupportsDunderLEobject+
+__le__!_typeshed.SupportsDunderLE.__le__Ë
 threading.Lockobject%
 	__enter__threading.Lock.__enter__#
 __exit__threading.Lock.__exit__!
@@ -1834,12 +1925,8 @@ annotationinspect.Parameter.annotation$
 POSITIONAL_OR_KEYWORD*
 VAR_KEYWORD*
 VAR_POSITIONAL*
-emptyè
-"pandas.core.indexing.IndexingMixinobject+
-at%pandas.core.indexing.IndexingMixin.at-
-iat&pandas.core.indexing.IndexingMixin.iat/
-iloc'pandas.core.indexing.IndexingMixin.iloc-
-loc&pandas.core.indexing.IndexingMixin.loc¯
+emptyI
+ pandas.core.indexing._LocIndexer%pandas.core.indexing._LocationIndexer¯
 (pandas._libs.tslibs.timedeltas.Timedeltadatetime.timedelta;
 __abs__0pandas._libs.tslibs.timedeltas.Timedelta.__abs__;
 __add__0pandas._libs.tslibs.timedeltas.Timedelta.__add__A
@@ -1894,17 +1981,7 @@ resolution*
 __init__tkinter.CallWrapper.__init__"func"subst"widget*
 func*
 subst*
-widgetž
-"pandas.core.series.TimestampSeriespandas.core.series.Series5
-__add__*pandas.core.series.TimestampSeries.__add__5
-__mul__*pandas.core.series.TimestampSeries.__mul__7
-__radd__+pandas.core.series.TimestampSeries.__radd__5
-__sub__*pandas.core.series.TimestampSeries.__sub__=
-__truediv__.pandas.core.series.TimestampSeries.__truediv__+
-dt%pandas.core.series.TimestampSeries.dt/
-mean'pandas.core.series.TimestampSeries.mean3
-median)pandas.core.series.TimestampSeries.median-
-std&pandas.core.series.TimestampSeries.stdª
+widgetª
 bytestyping.ByteString
 __add__bytes.__add__
 	__bytes__bytes.__bytes__"
@@ -1982,9 +2059,7 @@ startswithbytes.startswith
 pandas.errors.ParserWarningWarningK
 typing.AsyncIterableobject+
 	__aiter__typing.AsyncIterable.__aiter__:
-configparser.SafeConfigParserconfigparser.ConfigParserC
-_typeshed.HasFilenoobject$
-fileno_typeshed.HasFileno.fileno
+configparser.SafeConfigParserconfigparser.ConfigParser
 SyntaxWarningWarning4
 )pandas.errors.AccessorRegistrationWarningWarningý
 typing_extensions.NewTypeobject.
@@ -2004,7 +2079,10 @@ $pandas.core.groupby.generic.NamedAggtuple7
 _fields*	
 _source*	
 aggfunc*
-column»
+columnU
+_typeshed.SupportsDivModobject1
+
+__divmod__#_typeshed.SupportsDivMod.__divmod__»
 tkinter.Placeobject0
 place_configuretkinter.Place.place_configure*
 place_forgettkinter.Place.place_forget&
@@ -2020,7 +2098,9 @@ place_infotkinter.Place.place_info"info"place*
 configparser.Error	Exception'
 __init__configparser.Error.__init__"message*	
 message
-	ExceptionBaseException³
+	ExceptionBaseExceptionE
+_typeshed.NoneTypeobject'
+__bool___typeshed.NoneType.__bool__³
 typing.Patternobject5
 __class_getitem__ typing.Pattern.__class_getitem__#
 __copy__typing.Pattern.__copy__+
@@ -2126,20 +2206,10 @@ from_bytesint.from_bytes
 imagint.imag
 	numeratorint.numerator
 realint.real
-to_bytesint.to_bytesú
-_typeshed.AbstractSettyping.Collection(
-__and___typeshed.AbstractSet.__and__2
-__contains__"_typeshed.AbstractSet.__contains__&
-__ge___typeshed.AbstractSet.__ge__&
-__gt___typeshed.AbstractSet.__gt__&
-__le___typeshed.AbstractSet.__le__&
-__lt___typeshed.AbstractSet.__lt__&
-__or___typeshed.AbstractSet.__or__(
-__sub___typeshed.AbstractSet.__sub__(
-__xor___typeshed.AbstractSet.__xor__$
-_hash_typeshed.AbstractSet._hash.
-
-isdisjoint _typeshed.AbstractSet.isdisjointË
+to_bytesint.to_bytes™
+_typeshed.SupportsLenAndGetItemobject:
+__getitem__+_typeshed.SupportsLenAndGetItem.__getitem__2
+__len__'_typeshed.SupportsLenAndGetItem.__len__Ë
 pandas.arrays.Categorical&pandas.core.arrays.base.ExtensionArray 
 Tpandas.arrays.Categorical.T0
 	__array__#pandas.arrays.Categorical.__array__<
@@ -2207,9 +2277,7 @@ from_codes$pandas.arrays.Categorical.from_codes:
 value_counts&pandas.arrays.Categorical.value_counts&
 viewpandas.arrays.Categorical.view"__array_priority__"to_list*
 __array_priority__*	
-to_listQ
-_typeshed.SupportsDunderGTobject+
-__gt__!_typeshed.SupportsDunderGT.__gt__ì
+to_listì
 logging.StreamHandlerlogging.Handler<
 __class_getitem__'logging.StreamHandler.__class_getitem__*
 __init__logging.StreamHandler.__init__,
@@ -2359,7 +2427,9 @@ resolution"value*
 min*
 
 resolution*
-valueß
+valueY
+_typeshed.SupportsRDivModobject4
+__rdivmod__%_typeshed.SupportsRDivMod.__rdivmod__ß
 pandas.api.types.PeriodDtype.pandas.core.dtypes.dtypes.PandasExtensionDtype1
 __init__%pandas.api.types.PeriodDtype.__init__)
 freq!pandas.api.types.PeriodDtype.freq1
@@ -2376,7 +2446,9 @@ before_get%configparser.Interpolation.before_get5
 before_read&configparser.Interpolation.before_read3
 
 before_set%configparser.Interpolation.before_set7
-before_write'configparser.Interpolation.before_writeA
+before_write'configparser.Interpolation.before_writeI
+_typeshed.SupportsWriteobject&
+write_typeshed.SupportsWrite.writeA
 _SupportsRound2object&
 	__round___SupportsRound2.__round__
 inspect.EndOfBlock	Exceptioné
@@ -2473,10 +2545,7 @@ categories*
 csv.excel_tab	csv.excel3
 _NotImplementedTypeobject"__call__*
 
-__call__Ä
-"pandas.core.frame._LocIndexerFrame pandas.core.indexing._LocIndexer=
-__getitem__.pandas.core.frame._LocIndexerFrame.__getitem__=
-__setitem__.pandas.core.frame._LocIndexerFrame.__setitem__Ë
+__call__Ë
 subprocess.CalledProcessErrorsubprocess.SubprocessError2
 __init__&subprocess.CalledProcessError.__init__"cmd"output"
 returncode"stderr"stdout*
@@ -2486,8 +2555,7 @@ returncode"stderr"stdout*
 returncode*
 stderr*
 stdout
-ProcessLookupErrorOSErrorM
- pandas.core.indexing._iAtIndexer)pandas.core.indexing._ScalarAccessIndexerR
+ProcessLookupErrorOSErrorR
 &pandas.core.arrays.integer.UInt32Dtype(pandas.core.arrays.integer._IntegerDtypez
 logging.Filterobject#
 __init__logging.Filter.__init__
@@ -2560,7 +2628,9 @@ fieldnames*
 restval&
 pandas.errors.MergeError
 ValueError-
- pandas.errors.SpecificationError	ExceptionÝ
+ pandas.errors.SpecificationError	ExceptionQ
+_typeshed.SupportsDunderGEobject+
+__ge__!_typeshed.SupportsDunderGE.__ge__Ý
 +pandas.core.arrays.sparse.dtype.SparseDtype&pandas.core.dtypes.base.ExtensionDtype@
 __init__4pandas.core.arrays.sparse.dtype.SparseDtype.__init__D
 
@@ -2586,9 +2656,7 @@ createLocklogging.Handler.createLock
 	formatter*
 level*
 lock*
-nameQ
-_typeshed.SupportsTruncobject.
-	__trunc__!_typeshed.SupportsTrunc.__trunc__?
+name?
 pandas.tseries.offsets.Hour pandas._libs.tslibs.offsets.Tick/
 StopAsyncIteration	Exception"value*
 valueá
@@ -2641,7 +2709,8 @@ $pandas.errors.NumExprClobberingError	NameErrorA
 
 ag_running+typing_extensions.AsyncGenerator.ag_running/
 asend&typing_extensions.AsyncGenerator.asend1
-athrow'typing_extensions.AsyncGenerator.athrowË
+athrow'typing_extensions.AsyncGenerator.athrowM
+ pandas.core.indexing._iAtIndexer)pandas.core.indexing._ScalarAccessIndexerË
 tkinter.Packobject-
 pack_configuretkinter.Pack.pack_configure'
 pack_forgettkinter.Pack.pack_forget#
@@ -2683,27 +2752,13 @@ is_symlinkos.DirEntry.is_symlink
 locals*	
 varargs/
 !pandas.errors.DuplicateLabelError
-ValueErrorE
-_typeshed.SupportsReadobject#
-read_typeshed.SupportsRead.read"
+ValueError"
 ModuleNotFoundErrorImportError‰
 'pandas.errors.PyperclipWindowsException pandas.errors.PyperclipException<
-__init__0pandas.errors.PyperclipWindowsException.__init__‘
-_typeshed.SupportsGetItemobject6
-__contains__&_typeshed.SupportsGetItem.__contains__4
-__getitem__%_typeshed.SupportsGetItem.__getitem__
-_csv.Dialectobject!
-__init___csv.Dialect.__init__"	delimiter"doublequote"
-escapechar"lineterminator"	quotechar"quoting"skipinitialspace"strict*
-	delimiter*
-doublequote*
-
-escapechar*
-lineterminator*
-	quotechar*	
-quoting*
-skipinitialspace*
-strictÑ
+__init__0pandas.errors.PyperclipWindowsException.__init__–
+ _typeshed.SupportsKeysAndGetItemobject;
+__getitem__,_typeshed.SupportsKeysAndGetItem.__getitem__-
+keys%_typeshed.SupportsKeysAndGetItem.keysÑ
 inspect._Tracebacktuple%
 __new__inspect._Traceback.__new__%
 _asdictinspect._Traceback._asdict!
@@ -2734,18 +2789,61 @@ escapechar*
 __xor__inspect.AbstractSet.__xor__"
 _hashinspect.AbstractSet._hash,
 
-isdisjointinspect.AbstractSet.isdisjointR
+isdisjointinspect.AbstractSet.isdisjointœ
+$pandas.core.indexing._NDFrameIndexer)pandas._libs.indexing._NDFrameIndexerBase9
+__call__-pandas.core.indexing._NDFrameIndexer.__call__?
+__getitem__0pandas.core.indexing._NDFrameIndexer.__getitem__?
+__setitem__0pandas.core.indexing._NDFrameIndexer.__setitem__"axis*
+axisI
+pandas.core.series.Int32Dtype(pandas.core.arrays.integer._IntegerDtypeê
+(pandas.io.parsers.readers.TextFileReadertyping.Iterator?
+	__enter__2pandas.io.parsers.readers.TextFileReader.__enter__=
+__exit__1pandas.io.parsers.readers.TextFileReader.__exit__=
+__init__1pandas.io.parsers.readers.TextFileReader.__init__=
+__next__1pandas.io.parsers.readers.TextFileReader.__next__7
+close.pandas.io.parsers.readers.TextFileReader.close?
+	get_chunk2pandas.io.parsers.readers.TextFileReader.get_chunk5
+read-pandas.io.parsers.readers.TextFileReader.read"	chunksize"engine"handles"nrows"orig_options"squeeze*
+	chunksize*
+engine*	
+handles*
+nrows*
+orig_options*	
+squeezeM
+_typeshed.SupportsIterobject+
+__iter___typeshed.SupportsIter.__iter__R
 &pandas.core.arrays.integer.UInt64Dtype(pandas.core.arrays.integer._IntegerDtypeP
 #pandas.tseries.offsets.QuarterBegin)pandas._libs.tslibs.offsets.QuarterOffset
-DeprecationWarningWarningÊ
-$pandas.core.series._LocIndexerSeries pandas.core.indexing._LocIndexer?
-__getitem__0pandas.core.series._LocIndexerSeries.__getitem__?
-__setitem__0pandas.core.series._LocIndexerSeries.__setitem__
-_csv._writerobject
-dialect_csv._writer.dialect!
-writerow_csv._writer.writerow#
-	writerows_csv._writer.writerows&
-logging.NullHandlerlogging.Handler#
+DeprecationWarningWarning&
+logging.NullHandlerlogging.HandlerÊ
+pandas.core.base.IndexOpsMixinpandas.core.arraylike.OpsMixin%
+T pandas.core.base.IndexOpsMixin.T3
+__iter__'pandas.core.base.IndexOpsMixin.__iter__/
+argmax%pandas.core.base.IndexOpsMixin.argmax/
+argmin%pandas.core.base.IndexOpsMixin.argmin-
+array$pandas.core.base.IndexOpsMixin.arrayA
+drop_duplicates.pandas.core.base.IndexOpsMixin.drop_duplicates-
+empty$pandas.core.base.IndexOpsMixin.empty5
+	factorize(pandas.core.base.IndexOpsMixin.factorize1
+hasnans&pandas.core.base.IndexOpsMixin.hasnansQ
+is_monotonic_decreasing6pandas.core.base.IndexOpsMixin.is_monotonic_decreasingQ
+is_monotonic_increasing6pandas.core.base.IndexOpsMixin.is_monotonic_increasing5
+	is_unique(pandas.core.base.IndexOpsMixin.is_unique+
+item#pandas.core.base.IndexOpsMixin.item)
+max"pandas.core.base.IndexOpsMixin.max)
+min"pandas.core.base.IndexOpsMixin.min/
+nbytes%pandas.core.base.IndexOpsMixin.nbytes+
+ndim#pandas.core.base.IndexOpsMixin.ndim1
+nunique&pandas.core.base.IndexOpsMixin.nunique;
+searchsorted+pandas.core.base.IndexOpsMixin.searchsorted-
+shape$pandas.core.base.IndexOpsMixin.shape+
+size#pandas.core.base.IndexOpsMixin.size1
+to_list&pandas.core.base.IndexOpsMixin.to_list3
+to_numpy'pandas.core.base.IndexOpsMixin.to_numpy/
+tolist%pandas.core.base.IndexOpsMixin.tolist5
+	transpose(pandas.core.base.IndexOpsMixin.transpose;
+value_counts+pandas.core.base.IndexOpsMixin.value_counts"__array_priority__*
+__array_priority__#
 NotImplementedErrorRuntimeErroré
 +pandas.core.indexes.datetimes.DatetimeIndex5pandas.core.indexes.accessors.DatetimeIndexProperties7pandas.core.indexes.datetimelike.DatetimeTimedeltaMixin>
 __add__3pandas.core.indexes.datetimes.DatetimeIndex.__add__B
@@ -2775,9 +2873,9 @@ __reduce__6pandas.core.indexes.datetimes.DatetimeIndex.__reduce__>
 get_window_boundsApandas.api.indexers.VariableOffsetWindowIndexer.get_window_boundsf
 os._wrap_closeio.TextIOWrapper#
 __init__os._wrap_close.__init__
-closeos._wrap_close.closeQ
-_typeshed.SupportsDunderLEobject+
-__le__!_typeshed.SupportsDunderLE.__le__À
+closeos._wrap_close.closeM
+_typeshed.SupportsRAddobject+
+__radd___typeshed.SupportsRAdd.__radd__À
 tkinter.Menutkinter.Widget!
 __init__tkinter.Menu.__init__!
 activatetkinter.Menu.activate
@@ -2806,7 +2904,11 @@ __reduce__6pandas.core.indexes.datetimes.DatetimeIndex.__reduce__>
 	xpositiontkinter.Menu.xposition#
 	ypositiontkinter.Menu.yposition"config"entryconfig*
 config*
-entryconfigM
+entryconfig
+_csv._writerobject
+dialect_csv._writer.dialect!
+writerow_csv._writer.writerow#
+	writerows_csv._writer.writerowsM
 logging.RootLoggerlogging.Logger'
 __init__logging.RootLogger.__init__S
 (pandas.core.arrays.floating.Float64Dtype'pandas.core.arrays.numeric.NumericDtype†
@@ -2986,7 +3088,11 @@ winfo_nametkinter.Misc.winfo_name)
 waitvar@
 pandas.tseries.offsets.Micro pandas._libs.tslibs.offsets.TickE
 _TranslateTableobject*
-__getitem___TranslateTable.__getitem__‡
+__getitem___TranslateTable.__getitem__S
+_typeshed.DataclassInstanceobject"__dataclass_fields__*
+__dataclass_fields__p
+!pandas.core.series.IntervalSeriespandas.core.series.Series0
+array'pandas.core.series.IntervalSeries.array‡
 time._ClockInfoobject"
 adjustable"implementation"	monotonic"
 resolution*
@@ -3004,7 +3110,17 @@ resolutione
 tkinter.BitmapImagetkinter.Imagetkinter._BitmapImageLike(
 __init__tkinter.BitmapImage.__init__’
 (pandas.tseries.offsets.CustomBusinessDay'pandas._libs.tslibs.offsets.BusinessDay=
-__init__1pandas.tseries.offsets.CustomBusinessDay.__init__&
+__init__1pandas.tseries.offsets.CustomBusinessDay.__init__ž
+"pandas.core.series.TimestampSeriespandas.core.series.Series5
+__add__*pandas.core.series.TimestampSeries.__add__5
+__mul__*pandas.core.series.TimestampSeries.__mul__7
+__radd__+pandas.core.series.TimestampSeries.__radd__5
+__sub__*pandas.core.series.TimestampSeries.__sub__=
+__truediv__.pandas.core.series.TimestampSeries.__truediv__+
+dt%pandas.core.series.TimestampSeries.dt/
+mean'pandas.core.series.TimestampSeries.mean3
+median)pandas.core.series.TimestampSeries.median-
+std&pandas.core.series.TimestampSeries.std&
 pandas.errors.DatabaseErrorOSErrorã
 BaseExceptionobject"
 __init__BaseException.__init__*
@@ -3093,11 +3209,24 @@ select_setÕ
 tk
 TimeoutErrorOSError#
 typing._ProtocolMetaabc.ABCMetaL
-*concurrent.futures._base.InvalidStateErrorconcurrent.futures._base.ErrorQ
-_typeshed.SupportsDunderLTobject+
-__lt__!_typeshed.SupportsDunderLT.__lt__I
-_typeshed.SupportsAddobject(
-__add___typeshed.SupportsAdd.__add__Á
+*concurrent.futures._base.InvalidStateErrorconcurrent.futures._base.Error¬
+pandas.core.frame.DataFrameXchgabc.ABC>
+__dataframe__-pandas.core.frame.DataFrameXchg.__dataframe__<
+column_names,pandas.core.frame.DataFrameXchg.column_names8
+
+get_chunks*pandas.core.frame.DataFrameXchg.get_chunks8
+
+get_column*pandas.core.frame.DataFrameXchg.get_columnH
+get_column_by_name2pandas.core.frame.DataFrameXchg.get_column_by_name:
+get_columns+pandas.core.frame.DataFrameXchg.get_columns4
+metadata(pandas.core.frame.DataFrameXchg.metadata8
+
+num_chunks*pandas.core.frame.DataFrameXchg.num_chunks:
+num_columns+pandas.core.frame.DataFrameXchg.num_columns4
+num_rows(pandas.core.frame.DataFrameXchg.num_rows@
+select_columns.pandas.core.frame.DataFrameXchg.select_columnsP
+select_columns_by_name6pandas.core.frame.DataFrameXchg.select_columns_by_name"version*	
+versionÁ
 typing.Coroutinetyping.Awaitable
 closetyping.Coroutine.close%
 cr_awaittyping.Coroutine.cr_await#
@@ -3202,9 +3331,7 @@ $pandas.api.extensions.ExtensionDtypeobjectQ
 na_value-pandas.api.extensions.ExtensionDtype.na_value3
 names*pandas.api.extensions.ExtensionDtype.names"name"type*
 name*
-typeM
-_typeshed.SupportsIterobject+
-__iter___typeshed.SupportsIter.__iter__"
+type"
 threading.ThreadError	Exceptionh
 OSError	Exception"errno"filename"	filename2"strerror*
 errno*
@@ -3235,7 +3362,8 @@ ag_running typing.AsyncGenerator.ag_running$
 __forward_is_argument__*
 __forward_is_class__*
 __forward_module__*
-__forward_value__§
+__forward_value__J
+!pandas.core.indexing._iLocIndexer%pandas.core.indexing._LocationIndexer§
 tkinter.BooleanVartkinter.Variable'
 __init__tkinter.BooleanVar.__init__
 gettkinter.BooleanVar.get
@@ -3250,8 +3378,7 @@ initialize£
 initialize*
 
 initializeO
-$pandas.tseries.offsets.FY5253Quarter'pandas._libs.tslibs.offsets.FY5253MixinJ
-!pandas.core.indexing._iLocIndexer%pandas.core.indexing._LocationIndexerÀ
+$pandas.tseries.offsets.FY5253Quarter'pandas._libs.tslibs.offsets.FY5253MixinÀ
 inspect.ClosureVarstuple&
 __new__inspect.ClosureVars.__new__&
 _asdictinspect.ClosureVars._asdict"
@@ -3268,12 +3395,7 @@ $pandas.tseries.offsets.FY5253Quarter'pandas._libs.tslibs.offsets.FY5253MixinJ
 globals*
 	nonlocals*	
 unbound
-UserWarningWarningœ
-$pandas.core.indexing._NDFrameIndexer)pandas._libs.indexing._NDFrameIndexerBase9
-__call__-pandas.core.indexing._NDFrameIndexer.__call__?
-__getitem__0pandas.core.indexing._NDFrameIndexer.__getitem__?
-__setitem__0pandas.core.indexing._NDFrameIndexer.__setitem__"axis*
-axis{
+UserWarningWarning{
 tkinter.Labeltkinter.Widget"
 __init__tkinter.Label.__init__$
 	configuretkinter.Label.configure"config*
@@ -3316,9 +3438,7 @@ astimezonedatetime.datetime.astimezone$
 min)
 ConnectionRefusedErrorConnectionError–
 &pandas._libs.tslibs.offsets.DateOffset/pandas._libs.tslibs.offsets.RelativeDeltaOffset;
-__init__/pandas._libs.tslibs.offsets.DateOffset.__init___
-_typeshed.SupportsNoArgReadlineobject4
-readline(_typeshed.SupportsNoArgReadline.readline£
+__init__/pandas._libs.tslibs.offsets.DateOffset.__init__£
 tkinter.StringVartkinter.Variable&
 __init__tkinter.StringVar.__init__
 gettkinter.StringVar.get
@@ -3330,9 +3450,7 @@ initializeÇ
 __getitem__*typing_extensions._SpecialForm.__getitem__/
 __or__%typing_extensions._SpecialForm.__or__1
 __ror__&typing_extensions._SpecialForm.__ror__
-RuntimeWarningWarningg
- pandas.core.indexing._IndexSliceobject;
-__getitem__,pandas.core.indexing._IndexSlice.__getitem__©
+RuntimeWarningWarning©
 typing.ParamSpecobject%
 __init__typing.ParamSpec.__init__!
 __or__typing.ParamSpec.__or__#
@@ -3475,9 +3593,9 @@ nanosecond*
 weekday*
 
 weekofyear*
-yearQ
-_typeshed.SupportsDunderGEobject+
-__ge__!_typeshed.SupportsDunderGE.__ge__›
+year
+%pandas.core.indexing._LocationIndexer$pandas.core.indexing._NDFrameIndexer@
+__getitem__1pandas.core.indexing._LocationIndexer.__getitem__›
 typing._SpecialFormobject.
 __getitem__typing._SpecialForm.__getitem__$
 __or__typing._SpecialForm.__or__&
@@ -3488,9 +3606,9 @@ weekofyear*
 settkinter.IntVar.set"
 initialize*
 
-initializeM
-_typeshed.SupportsRSubobject+
-__rsub___typeshed.SupportsRSub.__rsub__Ð
+initializeI
+_typeshed.SupportsAddobject(
+__add___typeshed.SupportsAdd.__add__Ð
 tkinter.Entrytkinter.Widgettkinter.XView"
 __init__tkinter.Entry.__init__$
 	configuretkinter.Entry.configure
@@ -3545,9 +3663,7 @@ loggerDict"root*
 loggerDict*
 rootI
 _FormatMapMappingobject,
-__getitem___FormatMapMapping.__getitem__S
-_typeshed.DataclassInstanceobject"__dataclass_fields__*
-__dataclass_fields__*
+__getitem___FormatMapMapping.__getitem__*
 tkinter._BitmapImageLiketkinter._Imageš
 re.Matchobject/
 __class_getitem__re.Match.__class_getitem__
@@ -3623,93 +3739,12 @@ __origin__I
 micro*
 minor*
 releaselevel*
-serial³
-pandas.core.generic.NDFrame"pandas.core.indexing.IndexingMixin.
-__abs__#pandas.core.generic.NDFrame.__abs__2
-	__array__%pandas.core.generic.NDFrame.__array__8
-__contains__(pandas.core.generic.NDFrame.__contains__0
-__copy__$pandas.core.generic.NDFrame.__copy__8
-__deepcopy__(pandas.core.generic.NDFrame.__deepcopy__6
-__delitem__'pandas.core.generic.NDFrame.__delitem__8
-__finalize__(pandas.core.generic.NDFrame.__finalize__.
-__len__#pandas.core.generic.NDFrame.__len__.
-__neg__#pandas.core.generic.NDFrame.__neg__6
-__nonzero__'pandas.core.generic.NDFrame.__nonzero__.
-__pos__#pandas.core.generic.NDFrame.__pos__2
-	__round__%pandas.core.generic.NDFrame.__round__6
-__setattr__'pandas.core.generic.NDFrame.__setattr__&
-abspandas.core.generic.NDFrame.abs4
-
-add_prefix&pandas.core.generic.NDFrame.add_prefix4
-
-add_suffix&pandas.core.generic.NDFrame.add_suffix,
-asfreq"pandas.core.generic.NDFrame.asfreq(
-asof pandas.core.generic.NDFrame.asof.
-at_time#pandas.core.generic.NDFrame.at_time*
-attrs!pandas.core.generic.NDFrame.attrs(
-axes pandas.core.generic.NDFrame.axes8
-between_time(pandas.core.generic.NDFrame.between_time(
-bool pandas.core.generic.NDFrame.bool(
-clip pandas.core.generic.NDFrame.clip<
-convert_dtypes*pandas.core.generic.NDFrame.convert_dtypes(
-copy pandas.core.generic.NDFrame.copy0
-describe$pandas.core.generic.NDFrame.describe(
-drop pandas.core.generic.NDFrame.drop2
-	droplevel%pandas.core.generic.NDFrame.droplevel,
-dtypes"pandas.core.generic.NDFrame.dtypes*
-empty!pandas.core.generic.NDFrame.empty,
-equals"pandas.core.generic.NDFrame.equals,
-fillna"pandas.core.generic.NDFrame.fillna,
-filter"pandas.core.generic.NDFrame.filter*
-first!pandas.core.generic.NDFrame.firstB
-first_valid_index-pandas.core.generic.NDFrame.first_valid_index&
-getpandas.core.generic.NDFrame.get(
-head pandas.core.generic.NDFrame.head:
-infer_objects)pandas.core.generic.NDFrame.infer_objects(
-isna pandas.core.generic.NDFrame.isna,
-isnull"pandas.core.generic.NDFrame.isnull(
-keys pandas.core.generic.NDFrame.keys(
-last pandas.core.generic.NDFrame.last@
-last_valid_index,pandas.core.generic.NDFrame.last_valid_index(
-mask pandas.core.generic.NDFrame.mask(
-ndim pandas.core.generic.NDFrame.ndim*
-notna!pandas.core.generic.NDFrame.notna.
-notnull#pandas.core.generic.NDFrame.notnull4
-
-pct_change&pandas.core.generic.NDFrame.pct_change(
-pipe pandas.core.generic.NDFrame.pipe(
-rank pandas.core.generic.NDFrame.rank8
-reindex_like(pandas.core.generic.NDFrame.reindex_like.
-replace#pandas.core.generic.NDFrame.replace2
-	set_flags%pandas.core.generic.NDFrame.set_flags*
-shape!pandas.core.generic.NDFrame.shape*
-shift!pandas.core.generic.NDFrame.shift(
-size pandas.core.generic.NDFrame.size6
-slice_shift'pandas.core.generic.NDFrame.slice_shift4
-
-sort_index&pandas.core.generic.NDFrame.sort_index.
-squeeze#pandas.core.generic.NDFrame.squeeze0
-swapaxes$pandas.core.generic.NDFrame.swapaxes(
-tail pandas.core.generic.NDFrame.tail(
-take pandas.core.generic.NDFrame.take8
-to_clipboard(pandas.core.generic.NDFrame.to_clipboard,
-to_csv"pandas.core.generic.NDFrame.to_csv0
-to_excel$pandas.core.generic.NDFrame.to_excel,
-to_hdf"pandas.core.generic.NDFrame.to_hdf0
-to_latex$pandas.core.generic.NDFrame.to_latex6
-to_markdown'pandas.core.generic.NDFrame.to_markdown2
-	to_pickle%pandas.core.generic.NDFrame.to_pickle,
-to_sql"pandas.core.generic.NDFrame.to_sql0
-truncate$pandas.core.generic.NDFrame.truncate,
-tshift"pandas.core.generic.NDFrame.tshift4
-
-tz_convert&pandas.core.generic.NDFrame.tz_convert6
-tz_localize'pandas.core.generic.NDFrame.tz_localize,
-values"pandas.core.generic.NDFrame.values*
-where!pandas.core.generic.NDFrame.where"__array_priority__"__hash__*
-__array_priority__*
-
-__hash__%
+serialè
+"pandas.core.indexing.IndexingMixinobject+
+at%pandas.core.indexing.IndexingMixin.at-
+iat&pandas.core.indexing.IndexingMixin.iat/
+iloc'pandas.core.indexing.IndexingMixin.iloc-
+loc&pandas.core.indexing.IndexingMixin.loc%
 pandas.errors.DtypeWarningWarning–
 configparser.ConverterMappingtyping.MutableMapping8
 __delitem__)configparser.ConverterMapping.__delitem__8
@@ -3779,9 +3814,7 @@ makeRecordlogging.Logger.makeRecord-
 exceptionsBaseExceptionGroup.exceptions%
 messageBaseExceptionGroup.message!
 splitBaseExceptionGroup.split'
-subgroupBaseExceptionGroup.subgroup
-%pandas.core.indexing._LocationIndexer$pandas.core.indexing._NDFrameIndexer@
-__getitem__1pandas.core.indexing._LocationIndexer.__getitem__ˆ
+subgroupBaseExceptionGroup.subgroupˆ
 logging.BufferingFormatterobject/
 __init__#logging.BufferingFormatter.__init__+
 format!logging.BufferingFormatter.format7
@@ -3831,13 +3864,7 @@ components'pandas.arrays.TimedeltaArray.components+
 days*
 microseconds*
 nanoseconds*	
-seconds©
-_typeshed.structseqobject&
-__new___typeshed.structseq.__new__"n_fields"n_sequence_fields"n_unnamed_fields*
-
-n_fields*
-n_sequence_fields*
-n_unnamed_fields§
+seconds§
 typing_extensions.AsyncIteratortyping.AsyncIterable6
 	__aiter__)typing_extensions.AsyncIterator.__aiter__6
 	__anext__)typing_extensions.AsyncIterator.__anext__R
@@ -3911,8 +3938,7 @@ ValueError•
 configparser.BasicInterpolationconfigparser.Interpolationn
 typing.Iteratortyping.Iterable$
 __iter__typing.Iterator.__iter__$
-__next__typing.Iterator.__next__I
-pandas.core.series.Int32Dtype(pandas.core.arrays.integer._IntegerDtype
+__next__typing.Iterator.__next__
 BufferError	Exceptioní
 inspect.BlockFinderobject,
 
@@ -3926,7 +3952,9 @@ tokeneaterinspect.BlockFinder.tokeneater"decoratorhasargs"indecorator"inden
 
 passline*	
 startedP
-$pandas.core.arrays.integer.Int8Dtype(pandas.core.arrays.integer._IntegerDtypel
+$pandas.core.arrays.integer.Int8Dtype(pandas.core.arrays.integer._IntegerDtype
+
+_csv.Error	Exceptionl
 tkinter.Widgettkinter.BaseWidgettkinter.Gridtkinter.Packtkinter.Place
 bindtkinter.Widget.bindž
 -pandas.core.indexes.timedeltas.TimedeltaIndex6pandas.core.indexes.accessors.TimedeltaIndexProperties7pandas.core.indexes.datetimelike.DatetimeTimedeltaMixin@
@@ -3977,7 +4005,9 @@ min_10_expsys._float_info.min_10_exp"
 
 has_headercsv.Sniffer.has_header
 sniffcsv.Sniffer.sniff"	preferred*
-	preferred&
+	preferred_
+_typeshed.SupportsNoArgReadlineobject4
+readline(_typeshed.SupportsNoArgReadline.readline&
 tkinter._PackInfotyping._TypedDict
 ArithmeticError	Exceptionb
 ziptyping.Iterator
@@ -4006,21 +4036,7 @@ has_headercsv.Sniffer.has_header
 elapsedos.times_result.elapsed 
 systemos.times_result.system
 useros.times_result.user"__match_args__*
-__match_args__Ë
-"pandas.core.series.TimedeltaSeriespandas.core.series.Series5
-__add__*pandas.core.series.TimedeltaSeries.__add__5
-__mul__*pandas.core.series.TimedeltaSeries.__mul__7
-__radd__+pandas.core.series.TimedeltaSeries.__radd__5
-__sub__*pandas.core.series.TimedeltaSeries.__sub__=
-__truediv__.pandas.core.series.TimedeltaSeries.__truediv__+
-dt%pandas.core.series.TimedeltaSeries.dt/
-mean'pandas.core.series.TimedeltaSeries.mean3
-median)pandas.core.series.TimedeltaSeries.median-
-std&pandas.core.series.TimedeltaSeries.std+
-xs%pandas.core.series.TimedeltaSeries.xsU
-_typeshed.SupportsDivModobject1
-
-__divmod__#_typeshed.SupportsDivMod.__divmod__y
+__match_args__y
  configparser.LegacyInterpolationconfigparser.Interpolation9
 
 before_get+configparser.LegacyInterpolation.before_get$
@@ -4083,37 +4099,10 @@ initialize*
 __init__typing.NewType.__init__
 __or__typing.NewType.__or__!
 __ror__typing.NewType.__ror__"__supertype__*
-__supertype__µ
-pandas.core.arraylike.OpsMixinobject1
-__add__&pandas.core.arraylike.OpsMixin.__add__1
-__and__&pandas.core.arraylike.OpsMixin.__and__7
-
-__divmod__)pandas.core.arraylike.OpsMixin.__divmod__/
-__eq__%pandas.core.arraylike.OpsMixin.__eq__/
-__ge__%pandas.core.arraylike.OpsMixin.__ge__/
-__gt__%pandas.core.arraylike.OpsMixin.__gt__/
-__le__%pandas.core.arraylike.OpsMixin.__le__/
-__lt__%pandas.core.arraylike.OpsMixin.__lt__1
-__mod__&pandas.core.arraylike.OpsMixin.__mod__1
-__mul__&pandas.core.arraylike.OpsMixin.__mul__/
-__ne__%pandas.core.arraylike.OpsMixin.__ne__/
-__or__%pandas.core.arraylike.OpsMixin.__or__1
-__pow__&pandas.core.arraylike.OpsMixin.__pow__3
-__radd__'pandas.core.arraylike.OpsMixin.__radd__3
-__rand__'pandas.core.arraylike.OpsMixin.__rand__9
-__rdivmod__*pandas.core.arraylike.OpsMixin.__rdivmod__=
-__rfloordiv__,pandas.core.arraylike.OpsMixin.__rfloordiv__3
-__rmod__'pandas.core.arraylike.OpsMixin.__rmod__3
-__rmul__'pandas.core.arraylike.OpsMixin.__rmul__1
-__ror__&pandas.core.arraylike.OpsMixin.__ror__3
-__rpow__'pandas.core.arraylike.OpsMixin.__rpow__3
-__rsub__'pandas.core.arraylike.OpsMixin.__rsub__;
-__rtruediv__+pandas.core.arraylike.OpsMixin.__rtruediv__3
-__rxor__'pandas.core.arraylike.OpsMixin.__rxor__1
-__sub__&pandas.core.arraylike.OpsMixin.__sub__9
-__truediv__*pandas.core.arraylike.OpsMixin.__truediv__1
-__xor__&pandas.core.arraylike.OpsMixin.__xor__/
-$pandas.errors.ValueLabelTypeMismatchWarning‹
+__supertype__/
+$pandas.errors.ValueLabelTypeMismatchWarningq
+%pandas.core.base.NoNewAttributesMixinobject@
+__setattr__1pandas.core.base.NoNewAttributesMixin.__setattr__‹
 csv.Dialectobject 
 __init__csv.Dialect.__init__"	delimiter"doublequote"
 escapechar"lineterminator"	quotechar"quoting"skipinitialspace"strict*
@@ -4140,20 +4129,13 @@ ValueError
 notify_allthreading.Condition.notify_all&
 releasethreading.Condition.release 
 waitthreading.Condition.wait(
-wait_forthreading.Condition.wait_for
-
-_csv.Error	ExceptionU
-_typeshed.SupportsReadlineobject/
-readline#_typeshed.SupportsReadline.readline9
+wait_forthreading.Condition.wait_for9
 _SupportsPow2object 
 __pow___SupportsPow2.__pow__(
 pandas.errors.IndexingError	Exception¬
 pandas.arrays.PandasArray&pandas.core.arrays.base.ExtensionArray)pandas.core.arrays.base.ExtensionOpsMixin<
 __array_ufunc__)pandas.arrays.PandasArray.__array_ufunc__T
-)pandas.tseries.offsets.BusinessMonthBegin'pandas._libs.tslibs.offsets.MonthOffset“
-pandas.core.base.SelectionMixinobject:
-__getitem__+pandas.core.base.SelectionMixin.__getitem__,
-ndim$pandas.core.base.SelectionMixin.ndim+
+)pandas.tseries.offsets.BusinessMonthBegin'pandas._libs.tslibs.offsets.MonthOffset+
 tkinter._GridIndexInfotyping._TypedDictÇ
 concurrent.futures._base.FutureobjectF
 __class_getitem__1concurrent.futures._base.Future.__class_getitem__F
@@ -4214,7 +4196,9 @@ __module__*
 gettkinter.Scrollbar.get&
 identifytkinter.Scrollbar.identify
 settkinter.Scrollbar.set"config*
-config¡
+configQ
+_typeshed.SupportsDunderGTobject+
+__gt__!_typeshed.SupportsDunderGT.__gt__¡
 UnicodeEncodeErrorUnicodeError'
 __init__UnicodeEncodeError.__init__"encoding"end"object"reason"start*
 
@@ -4300,7 +4284,9 @@ field_spec"fmt_spec*
 
 field_spec*
 
-fmt_spec‹
+fmt_specQ
+_typeshed.SupportsDunderLTobject+
+__lt__!_typeshed.SupportsDunderLT.__lt__‹
 "pandas.tseries.offsets.WeekOfMonth,pandas._libs.tslibs.offsets.WeekOfMonthMixin7
 __init__+pandas.tseries.offsets.WeekOfMonth.__init__õ
 !pandas.io.excel._base.ExcelWriterobject8
@@ -4341,12 +4327,9 @@ __fspath__&pandas.io.pytables.HDFStore.__fspath__6
 open pandas.io.pytables.HDFStore.open&
 putpandas.io.pytables.HDFStore.put,
 select"pandas.io.pytables.HDFStore.select(
-walk pandas.io.pytables.HDFStore.walky
-_csv._readertyping.Iterator!
-__next___csv._reader.__next__
-dialect_csv._reader.dialect"line_num*
-
-line_numQ
+walk pandas.io.pytables.HDFStore.walkr
+pandas.core.series.OffsetSeriespandas.core.series.Series4
+__radd__(pandas.core.series.OffsetSeries.__radd__Q
 %pandas.core.arrays.integer.Int32Dtype(pandas.core.arrays.integer._IntegerDtypeæ/
 pandas.core.indexes.base.Indexpandas.core.base.IndexOpsMixin1
 __and__&pandas.core.indexes.base.Index.__and__5
@@ -4475,7 +4458,10 @@ slice_locs)pandas.core.indexes.base.Index.slice_locs+
 pandas.api.types.IntervalDtype.pandas.core.dtypes.dtypes.PandasExtensionDtype3
 __init__'pandas.api.types.IntervalDtype.__init__1
 subtype&pandas.api.types.IntervalDtype.subtype$
-ZeroDivisionErrorArithmeticErrorÞ
+ZeroDivisionErrorArithmeticErrorÊ
+$pandas.core.series._LocIndexerSeries pandas.core.indexing._LocIndexer?
+__getitem__0pandas.core.series._LocIndexerSeries.__getitem__?
+__setitem__0pandas.core.series._LocIndexerSeries.__setitem__Þ
 logging.FileHandlerlogging.StreamHandler(
 __init__logging.FileHandler.__init__"
 _openlogging.FileHandler._open"baseFilename"delay"encoding"errors"mode*
@@ -4489,7 +4475,13 @@ slice_locs)pandas.core.indexes.base.Index.slice_locs+
 	_PathLikeobject"
 
 __fspath___PathLike.__fspath__0
-#pandas.errors.PossibleDataLossError	ExceptionA
+#pandas.errors.PossibleDataLossError	Exceptiony
+_csv._readertyping.Iterator!
+__next___csv._reader.__next__
+dialect_csv._reader.dialect"line_num*
+
+line_numI
+pandas.core.series.Int16Dtype(pandas.core.arrays.integer._IntegerDtypeA
 _SupportsRound1object&
 	__round___SupportsRound1.__round__H
 pandas.tseries.offsets.FY5253'pandas._libs.tslibs.offsets.FY5253Mixin?
@@ -4539,9 +4531,7 @@ end_offset*
 transparency_set#tkinter.PhotoImage.transparency_set!
 writetkinter.PhotoImage.write
 zoomtkinter.PhotoImage.zoom"config*
-configq
-%pandas.core.base.NoNewAttributesMixinobject@
-__setattr__1pandas.core.base.NoNewAttributesMixin.__setattr__
+config
 Warning	Exceptionä
 logging.PercentStyleobject)
 __init__logging.PercentStyle.__init__%
@@ -4560,65 +4550,7 @@ end_offset*
 sizeof_digitsys._int_info.sizeof_digitF
 str_digits_check_threshold(sys._int_info.str_digits_check_thresholdA
 csv.unix_dialectobject%
-__init__csv.unix_dialect.__init__»
-#openpyxl.workbook.workbook.Workbookobject@
-__contains__0openpyxl.workbook.workbook.Workbook.__contains__>
-__delitem__/openpyxl.workbook.workbook.Workbook.__delitem__>
-__getitem__/openpyxl.workbook.workbook.Workbook.__getitem__8
-__init__,openpyxl.workbook.workbook.Workbook.__init__8
-__iter__,openpyxl.workbook.workbook.Workbook.__iter__4
-active*openpyxl.workbook.workbook.Workbook.activeF
-add_named_style3openpyxl.workbook.workbook.Workbook.add_named_style>
-chartsheets/openpyxl.workbook.workbook.Workbook.chartsheets2
-close)openpyxl.workbook.workbook.Workbook.closeD
-copy_worksheet2openpyxl.workbook.workbook.Workbook.copy_worksheetJ
-create_chartsheet5openpyxl.workbook.workbook.Workbook.create_chartsheetL
-create_named_range6openpyxl.workbook.workbook.Workbook.create_named_range@
-create_sheet0openpyxl.workbook.workbook.Workbook.create_sheet:
-	data_only-openpyxl.workbook.workbook.Workbook.data_only2
-epoch)openpyxl.workbook.workbook.Workbook.epochF
-excel_base_date3openpyxl.workbook.workbook.Workbook.excel_base_date:
-	get_index-openpyxl.workbook.workbook.Workbook.get_indexJ
-get_sheet_by_name5openpyxl.workbook.workbook.Workbook.get_sheet_by_nameF
-get_sheet_names3openpyxl.workbook.workbook.Workbook.get_sheet_names2
-index)openpyxl.workbook.workbook.Workbook.index:
-	mime_type-openpyxl.workbook.workbook.Workbook.mime_type<
-
-move_sheet.openpyxl.workbook.workbook.Workbook.move_sheet@
-named_styles0openpyxl.workbook.workbook.Workbook.named_styles:
-	read_only-openpyxl.workbook.workbook.Workbook.read_only4
-remove*openpyxl.workbook.workbook.Workbook.remove@
-remove_sheet0openpyxl.workbook.workbook.Workbook.remove_sheet0
-save(openpyxl.workbook.workbook.Workbook.save<
-
-sheetnames.openpyxl.workbook.workbook.Workbook.sheetnames>
-style_names/openpyxl.workbook.workbook.Workbook.style_names<
-
-worksheets.openpyxl.workbook.workbook.Workbook.worksheets<
-
-write_only.openpyxl.workbook.workbook.Workbook.write_only"calculation"	code_name"defined_names"encoding"is_template"	iso_dates"loaded_theme"path"
-properties"rels"security"shared_strings"template"vba_archive"views*
-calculation*
-	code_name*
-defined_names*
-
-encoding*
-is_template*
-	iso_dates*
-loaded_theme*
-path*
-
-properties*
-rels*
-
-security*
-shared_strings*
-
-template*
-vba_archive*
-viewsY
-_typeshed.SupportsRDivModobject4
-__rdivmod__%_typeshed.SupportsRDivMod.__rdivmod__I
+__init__csv.unix_dialect.__init__I
 typing.Containerobject-
 __contains__typing.Container.__contains__Ä
 inspect.BoundArgumentsobject'
@@ -4641,13 +4573,20 @@ __origin__õ
 __init__typing.TypeVarTuple.__init__(
 __iter__typing.TypeVarTuple.__iter__H
 __typing_prepare_subst__,typing.TypeVarTuple.__typing_prepare_subst__8
-__typing_subst__$typing.TypeVarTuple.__typing_subst__p
+__typing_subst__$typing.TypeVarTuple.__typing_subst__I
+_typeshed.SupportsSubobject(
+__sub___typeshed.SupportsSub.__sub__p
 !pandas.errors.AbstractMethodErrorNotImplementedError6
 __init__*pandas.errors.AbstractMethodError.__init__Q
 %pandas.core.arrays.integer.UInt8Dtype(pandas.core.arrays.integer._IntegerDtype…
  collections._OrderedDictKeysViewtyping.KeysViewtyping.Reversible=
 __reversed__-collections._OrderedDictKeysView.__reversed__G
-%concurrent.futures._base.TimeoutErrorconcurrent.futures._base.Error«
+%concurrent.futures._base.TimeoutErrorconcurrent.futures._base.ErrorŒ
+_typeshed.SupportsItemAccessobject9
+__contains__)_typeshed.SupportsItemAccess.__contains__7
+__delitem__(_typeshed.SupportsItemAccess.__delitem__7
+__getitem__(_typeshed.SupportsItemAccess.__getitem__7
+__setitem__(_typeshed.SupportsItemAccess.__setitem__«
 !pandas._libs.tslibs.period.Period&pandas._libs.tslibs.period.PeriodMixin4
 __add__)pandas._libs.tslibs.period.Period.__add__2
 __eq__(pandas._libs.tslibs.period.Period.__eq__2
@@ -4693,19 +4632,15 @@ weekofyear,pandas._libs.tslibs.period.Period.weekofyear.
 __init__#pandas.arrays.IntegerArray.__init__5
 __setitem__&pandas.arrays.IntegerArray.__setitem__+
 astype!pandas.arrays.IntegerArray.astype)
-dtype pandas.arrays.IntegerArray.dtypeŒ
-_typeshed.SupportsItemAccessobject9
-__contains__)_typeshed.SupportsItemAccess.__contains__7
-__delitem__(_typeshed.SupportsItemAccess.__delitem__7
-__getitem__(_typeshed.SupportsItemAccess.__getitem__7
-__setitem__(_typeshed.SupportsItemAccess.__setitem__)
+dtype pandas.arrays.IntegerArray.dtype)
 ConnectionAbortedErrorConnectionError
 FutureWarningWarning”
 tkinter.Topleveltkinter.BaseWidget
 tkinter.Wm%
 __init__tkinter.Toplevel.__init__'
 	configuretkinter.Toplevel.configure"config*
-configŠ
+configI
+pandas.core.series.Int64Dtype(pandas.core.arrays.integer._IntegerDtypeŠ
 inspect.FullArgSpectuple&
 __new__inspect.FullArgSpec.__new__&
 _asdictinspect.FullArgSpec._asdict"
@@ -4727,8 +4662,7 @@ kwonlyargs*
 kwonlydefaults*	
 varargs*
 varkw
-MemoryError	ExceptionI
-pandas.core.series.Int64Dtype(pandas.core.arrays.integer._IntegerDtypeC
+MemoryError	ExceptionC
 typing.SupportsIntobject%
 __int__typing.SupportsInt.__int__“
 
@@ -4822,8 +4756,7 @@ iconwindow*
 reason*
 startK
 typing.SupportsBytesobject+
-	__bytes__typing.SupportsBytes.__bytes__I
-pandas.core.series.Int16Dtype(pandas.core.arrays.integer._IntegerDtypeE
+	__bytes__typing.SupportsBytes.__bytes__E
 math._SupportsCeilobject'
 __ceil__math._SupportsCeil.__ceil__O
 "pandas.tseries.offsets.BusinessDay)pandas._libs.tslibs.offsets.BusinessMixin&
@@ -4878,35 +4811,7 @@ $pandas._config.config.option_contextcontextlib.ContextDecorator;
 maptyping.Iterator
 __init__map.__init__
 __iter__map.__iter__
-__next__map.__next__Ê
-pandas.core.base.IndexOpsMixinpandas.core.arraylike.OpsMixin%
-T pandas.core.base.IndexOpsMixin.T3
-__iter__'pandas.core.base.IndexOpsMixin.__iter__/
-argmax%pandas.core.base.IndexOpsMixin.argmax/
-argmin%pandas.core.base.IndexOpsMixin.argmin-
-array$pandas.core.base.IndexOpsMixin.arrayA
-drop_duplicates.pandas.core.base.IndexOpsMixin.drop_duplicates-
-empty$pandas.core.base.IndexOpsMixin.empty5
-	factorize(pandas.core.base.IndexOpsMixin.factorize1
-hasnans&pandas.core.base.IndexOpsMixin.hasnansQ
-is_monotonic_decreasing6pandas.core.base.IndexOpsMixin.is_monotonic_decreasingQ
-is_monotonic_increasing6pandas.core.base.IndexOpsMixin.is_monotonic_increasing5
-	is_unique(pandas.core.base.IndexOpsMixin.is_unique+
-item#pandas.core.base.IndexOpsMixin.item)
-max"pandas.core.base.IndexOpsMixin.max)
-min"pandas.core.base.IndexOpsMixin.min/
-nbytes%pandas.core.base.IndexOpsMixin.nbytes+
-ndim#pandas.core.base.IndexOpsMixin.ndim1
-nunique&pandas.core.base.IndexOpsMixin.nunique;
-searchsorted+pandas.core.base.IndexOpsMixin.searchsorted-
-shape$pandas.core.base.IndexOpsMixin.shape+
-size#pandas.core.base.IndexOpsMixin.size1
-to_list&pandas.core.base.IndexOpsMixin.to_list3
-to_numpy'pandas.core.base.IndexOpsMixin.to_numpy/
-tolist%pandas.core.base.IndexOpsMixin.tolist5
-	transpose(pandas.core.base.IndexOpsMixin.transpose;
-value_counts+pandas.core.base.IndexOpsMixin.value_counts"__array_priority__*
-__array_priority__>
+__next__map.__next__>
 pandas.tseries.offsets.Day pandas._libs.tslibs.offsets.Tick"
 KeyboardInterruptBaseException
 shutil.ErrorOSError
@@ -5087,9 +4992,7 @@ __module__Ó
 'pandas.core.dtypes.dtypes.IntervalDtype.pandas.core.dtypes.dtypes.PandasExtensionDtype<
 __init__0pandas.core.dtypes.dtypes.IntervalDtype.__init__:
 subtype/pandas.core.dtypes.dtypes.IntervalDtype.subtype/
-$pandas.errors.SettingWithCopyWarningWarningQ
-_typeshed.SupportsAnextobject.
-	__anext__!_typeshed.SupportsAnext.__anext__·
+$pandas.errors.SettingWithCopyWarningWarning·
 collections.Counterdict&
 __add__collections.Counter.__add__&
 __and__collections.Counter.__and__.
@@ -5129,7 +5032,9 @@ $pandas.errors.SettingWithCopyWarningWarningQ
 __rsub__typing.ItemsView.__rsub__%
 __rxor__typing.ItemsView.__rxor__#
 __sub__typing.ItemsView.__sub__#
-__xor__typing.ItemsView.__xor__º
+__xor__typing.ItemsView.__xor__E
+_typeshed.SupportsReadobject#
+read_typeshed.SupportsRead.readº
 tkinter.Canvastkinter.Widgettkinter.XViewtkinter.YView#
 __init__tkinter.Canvas.__init__
 addtagtkinter.Canvas.addtag+
@@ -5200,7 +5105,10 @@ tag_unbindtkinter.Canvas.tag_unbind!
 itemconfig*
 config*
 
-itemconfig•
+itemconfigÎ
+%pandas.core.series._iLocIndexerSeries!pandas.core.indexing._iLocIndexer@
+__getitem__1pandas.core.series._iLocIndexerSeries.__getitem__@
+__setitem__1pandas.core.series._iLocIndexerSeries.__setitem__•
 &pandas.core.indexes.period.PeriodIndex1pandas.core.indexes.accessors.PeriodIndexFieldOps6pandas.core.indexes.datetimelike.DatetimeIndexOpsMixin=
 	__array__0pandas.core.indexes.period.PeriodIndex.__array__G
 __array_wrap__5pandas.core.indexes.period.PeriodIndex.__array_wrap__C
@@ -5224,10 +5132,7 @@ difference1pandas.core.indexes.period.PeriodIndex.difference9
 join+pandas.core.indexes.period.PeriodIndex.joinC
 memory_usage3pandas.core.indexes.period.PeriodIndex.memory_usageC
 searchsorted3pandas.core.indexes.period.PeriodIndex.searchsorted7
-values-pandas.core.indexes.period.PeriodIndex.valuesâ
-)pandas.core.indexing._ScalarAccessIndexer)pandas._libs.indexing._NDFrameIndexerBaseD
-__getitem__5pandas.core.indexing._ScalarAccessIndexer.__getitem__D
-__setitem__5pandas.core.indexing._ScalarAccessIndexer.__setitem__T
+values-pandas.core.indexes.period.PeriodIndex.valuesT
 pandas.tseries.offsets.Easter3pandas._libs.tslibs.offsets.SingleConstructorOffsetœ
 os.uname_resultobjecttuple"
 __new__os.uname_result.__new__"
@@ -5246,7 +5151,9 @@ difference1pandas.core.indexes.period.PeriodIndex.difference9
 partiesthreading.Barrier.parties 
 resetthreading.Barrier.reset
 waitthreading.Barrier.wait
-UnicodeWarningWarningg
+UnicodeWarningWarningU
+_typeshed.IdentityFunctionobject/
+__call__#_typeshed.IdentityFunction.__call__g
 #tkinter._ExceptionReportingCallbackobject8
 __call__,tkinter._ExceptionReportingCallback.__call__
 queue.Empty	Exceptionú 
@@ -5407,7 +5314,13 @@ getboolean$configparser.SectionProxy.getboolean.
 getfloat"configparser.SectionProxy.getfloat*
 getint configparser.SectionProxy.getint&
 nameconfigparser.SectionProxy.name*
-parser configparser.SectionProxy.parserS
+parser configparser.SectionProxy.parser©
+_typeshed.structseqobject&
+__new___typeshed.structseq.__new__"n_fields"n_sequence_fields"n_unnamed_fields*
+
+n_fields*
+n_sequence_fields*
+n_unnamed_fieldsS
 (pandas.core.arrays.floating.Float32Dtype'pandas.core.arrays.numeric.NumericDtype%
 FloatingPointErrorArithmeticErrorp
 filtertyping.Iterator
@@ -5431,10 +5344,7 @@ getboolean$configparser.SectionProxy.getboolean.
 pattern*
 pos'
 pandas.errors.ParserError
-ValueErrorE
-_typeshed.NoneTypeobject'
-__bool___typeshed.NoneType.__bool__L
-pandas.core.indexing._AtIndexer)pandas.core.indexing._ScalarAccessIndexerŽ
+ValueErrorŽ
 configparser.RawConfigParsertyping.MutableMapping9
 __contains__)configparser.RawConfigParser.__contains__7
 __delitem__(configparser.RawConfigParser.__delitem__7
@@ -5498,9 +5408,10 @@ categories5pandas.core.dtypes.dtypes.CategoricalDtype.categories=
 weekday*
 year‚
 $configparser.InterpolationDepthErrorconfigparser.InterpolationError9
-__init__-configparser.InterpolationDepthError.__init__I
-_typeshed.SupportsWriteobject&
-write_typeshed.SupportsWrite.writeÇ
+__init__-configparser.InterpolationDepthError.__init__‘
+_typeshed.SupportsGetItemobject6
+__contains__&_typeshed.SupportsGetItem.__contains__4
+__getitem__%_typeshed.SupportsGetItem.__getitem__Ç
 typeobject
 __base__type.__base__#
 __basicsize__type.__basicsize__
@@ -5655,7 +5566,9 @@ parametersinspect.Signature.parameters$
 empty§
 collections._odict_valuestyping.Reversibletyping.ValuesView6
 __reversed__&collections._odict_values.__reversed__,
-mapping!collections._odict_values.mappingð
+mapping!collections._odict_values.mappingM
+_typeshed.SupportsNextobject+
+__next___typeshed.SupportsNext.__next__ð
 typing_extensions._TypedDicttyping.Mapping7
 __delitem__(typing_extensions._TypedDict.__delitem__/
 __ior__$typing_extensions._TypedDict.__ior__-
@@ -5679,7 +5592,10 @@ setdefault'typing_extensions._TypedDict.setdefault-
 _tplŠ
 #pandas.tseries.offsets.BusinessHour)pandas._libs.tslibs.offsets.BusinessMixin8
 __init__,pandas.tseries.offsets.BusinessHour.__init__*
-pandas.errors.ClosedFileError	Exception•
+pandas.errors.ClosedFileError	ExceptionÈ
+#pandas.core.frame._iLocIndexerFrame!pandas.core.indexing._iLocIndexer>
+__getitem__/pandas.core.frame._iLocIndexerFrame.__getitem__>
+__setitem__/pandas.core.frame._iLocIndexerFrame.__setitem__•
 string.Formatterobject%
 _vformatstring.Formatter._vformat7
 check_unused_args"string.Formatter.check_unused_args/
@@ -5689,9 +5605,7 @@ setdefault'typing_extensions._TypedDict.setdefault-
 	get_fieldstring.Formatter.get_field'
 	get_valuestring.Formatter.get_value
 parsestring.Formatter.parse#
-vformatstring.Formatter.vformatI
-_typeshed.SupportsItemsobject&
-items_typeshed.SupportsItems.items_
+vformatstring.Formatter.vformat_
 configparser.ConfigParserconfigparser.RawConfigParser$
 getconfigparser.ConfigParser.get.
 #pandas.errors.PossiblePrecisionLossWarning
@@ -5703,7 +5617,93 @@ __delete__"inspect._SupportsDelete.__delete__½
 'pandas.core.arrays.boolean.BooleanDtype&pandas.core.dtypes.base.ExtensionDtypeT
 construct_array_type<pandas.core.arrays.boolean.BooleanDtype.construct_array_type"na_value*
 
-na_valueA
+na_value³
+pandas.core.generic.NDFrame"pandas.core.indexing.IndexingMixin.
+__abs__#pandas.core.generic.NDFrame.__abs__2
+	__array__%pandas.core.generic.NDFrame.__array__8
+__contains__(pandas.core.generic.NDFrame.__contains__0
+__copy__$pandas.core.generic.NDFrame.__copy__8
+__deepcopy__(pandas.core.generic.NDFrame.__deepcopy__6
+__delitem__'pandas.core.generic.NDFrame.__delitem__8
+__finalize__(pandas.core.generic.NDFrame.__finalize__.
+__len__#pandas.core.generic.NDFrame.__len__.
+__neg__#pandas.core.generic.NDFrame.__neg__6
+__nonzero__'pandas.core.generic.NDFrame.__nonzero__.
+__pos__#pandas.core.generic.NDFrame.__pos__2
+	__round__%pandas.core.generic.NDFrame.__round__6
+__setattr__'pandas.core.generic.NDFrame.__setattr__&
+abspandas.core.generic.NDFrame.abs4
+
+add_prefix&pandas.core.generic.NDFrame.add_prefix4
+
+add_suffix&pandas.core.generic.NDFrame.add_suffix,
+asfreq"pandas.core.generic.NDFrame.asfreq(
+asof pandas.core.generic.NDFrame.asof.
+at_time#pandas.core.generic.NDFrame.at_time*
+attrs!pandas.core.generic.NDFrame.attrs(
+axes pandas.core.generic.NDFrame.axes8
+between_time(pandas.core.generic.NDFrame.between_time(
+bool pandas.core.generic.NDFrame.bool(
+clip pandas.core.generic.NDFrame.clip<
+convert_dtypes*pandas.core.generic.NDFrame.convert_dtypes(
+copy pandas.core.generic.NDFrame.copy0
+describe$pandas.core.generic.NDFrame.describe(
+drop pandas.core.generic.NDFrame.drop2
+	droplevel%pandas.core.generic.NDFrame.droplevel,
+dtypes"pandas.core.generic.NDFrame.dtypes*
+empty!pandas.core.generic.NDFrame.empty,
+equals"pandas.core.generic.NDFrame.equals,
+fillna"pandas.core.generic.NDFrame.fillna,
+filter"pandas.core.generic.NDFrame.filter*
+first!pandas.core.generic.NDFrame.firstB
+first_valid_index-pandas.core.generic.NDFrame.first_valid_index&
+getpandas.core.generic.NDFrame.get(
+head pandas.core.generic.NDFrame.head:
+infer_objects)pandas.core.generic.NDFrame.infer_objects(
+isna pandas.core.generic.NDFrame.isna,
+isnull"pandas.core.generic.NDFrame.isnull(
+keys pandas.core.generic.NDFrame.keys(
+last pandas.core.generic.NDFrame.last@
+last_valid_index,pandas.core.generic.NDFrame.last_valid_index(
+mask pandas.core.generic.NDFrame.mask(
+ndim pandas.core.generic.NDFrame.ndim*
+notna!pandas.core.generic.NDFrame.notna.
+notnull#pandas.core.generic.NDFrame.notnull4
+
+pct_change&pandas.core.generic.NDFrame.pct_change(
+pipe pandas.core.generic.NDFrame.pipe(
+rank pandas.core.generic.NDFrame.rank8
+reindex_like(pandas.core.generic.NDFrame.reindex_like.
+replace#pandas.core.generic.NDFrame.replace2
+	set_flags%pandas.core.generic.NDFrame.set_flags*
+shape!pandas.core.generic.NDFrame.shape*
+shift!pandas.core.generic.NDFrame.shift(
+size pandas.core.generic.NDFrame.size6
+slice_shift'pandas.core.generic.NDFrame.slice_shift4
+
+sort_index&pandas.core.generic.NDFrame.sort_index.
+squeeze#pandas.core.generic.NDFrame.squeeze0
+swapaxes$pandas.core.generic.NDFrame.swapaxes(
+tail pandas.core.generic.NDFrame.tail(
+take pandas.core.generic.NDFrame.take8
+to_clipboard(pandas.core.generic.NDFrame.to_clipboard,
+to_csv"pandas.core.generic.NDFrame.to_csv0
+to_excel$pandas.core.generic.NDFrame.to_excel,
+to_hdf"pandas.core.generic.NDFrame.to_hdf0
+to_latex$pandas.core.generic.NDFrame.to_latex6
+to_markdown'pandas.core.generic.NDFrame.to_markdown2
+	to_pickle%pandas.core.generic.NDFrame.to_pickle,
+to_sql"pandas.core.generic.NDFrame.to_sql0
+truncate$pandas.core.generic.NDFrame.truncate,
+tshift"pandas.core.generic.NDFrame.tshift4
+
+tz_convert&pandas.core.generic.NDFrame.tz_convert6
+tz_localize'pandas.core.generic.NDFrame.tz_localize,
+values"pandas.core.generic.NDFrame.values*
+where!pandas.core.generic.NDFrame.where"__array_priority__"__hash__*
+__array_priority__*
+
+__hash__A
 typing._Aliasobject(
 __getitem__typing._Alias.__getitem__è
 CBM_DataUpload.FileListApp/

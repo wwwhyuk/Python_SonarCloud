@@ -306,7 +306,7 @@ class FileListApp:
             equipment_data = {}
             for eqp_id, eqp_num in cursor:
                 equipment_data[eqp_id] = eqp_num
-            print(f"MySQL로부터 데이터를 로드하는데 성공했습니다:", equipment_data)
+            print("MySQL로부터 데이터를 로드하는데 성공했습니다:", equipment_data)
 
             cursor.close()
             connection.close()
@@ -339,7 +339,7 @@ class FileListApp:
         # 로그 설정
         logging.basicConfig(level=logging.INFO,
                             format='%(asctime)s: %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
-        # self.log_filename = log_file_path
+
         logging.info("업로드 시작")
 
     # 로깅 함수
@@ -408,7 +408,7 @@ class FileListApp:
         self.progress_bar["value"] = 0
         self.progress_bar["maximum"] = 0
 
-        self.progressbar_label.config(text=f"0%")
+        self.progressbar_label.config(text="0%")
 
         files = [f for f in os.listdir(folder_path)
                  if f.endswith('.raw') or (f.endswith('.csv') and "_IU_" not in f)]
@@ -441,6 +441,7 @@ class FileListApp:
     # 파일 제외 처리 함수
     def mark_exclude(self):
 
+        """ 2024년 5월 23일 '이미 선택된 상황에 대해서 처리' """
         # selected_items = self.file_tree.selection()
         # for item in selected_items:
         #     item_info = self.file_tree.item(item)
@@ -452,6 +453,7 @@ class FileListApp:
         #     print('not have')
         # else:
         #     print('what')
+
 
         selected_items = self.file_tree.selection()
         if selected_items:
@@ -483,7 +485,7 @@ class FileListApp:
             # influx.exe 파일 경로 확인
             influx_exe_path = os.path.join(db_config['path'], 'influx.exe')
             if not os.path.exists(influx_exe_path):
-                raise Exception(f"influx.exe not found in path: {db_config['path']}")
+                raise ValueError(f"influx.exe not found in path: {db_config['path']}")
 
             # 인플럭스DB 클라이언트 설정
             client = InfluxDBClient(host=db_config['host'],
@@ -512,7 +514,6 @@ class FileListApp:
 
         self.starting_time = time.time()
 
-        # total_files = len(self.file_tree.get_children())
         total_files = sum(
             1 for item in self.file_tree.get_children() if "선택" in self.file_tree.item(item, 'values')[5])
 
@@ -533,8 +534,6 @@ class FileListApp:
         elif sig == 2:
             self.file_tree2.insert('', 'end', iid="2", values=('CSV 변환 / 결합',))
 
-        # self.loading_canvas.grid()
-        # self.animate_loading(0)
         self.processed_files_count = 0
         self.stime = time.time()
         self.upload_queue = queue.Queue()
@@ -565,7 +564,7 @@ class FileListApp:
                 self.upload_queue.task_done()
 
     # 파일 업로드 로직을 수행 하는 함수
-    def upload_file(self, i, item, sig):
+    def upload_file(self, item, sig):
         try:
 
             file_info = self.file_tree.item(item, 'values')
@@ -733,7 +732,7 @@ class FileListApp:
                 log_file.write('\n=============== Traceback 내용 ===============\n')
                 log_file.write(err_msg)
             messagebox.showinfo("오류", f"아래와 같은 오류가 발생하였습니다. log 폴더 내 log 파일을 확인해주십시요.\n{E}")
-            messagebox.showinfo("오류", f"가급적 종료하여 주시고, 오류 해결 후 실행해주십시요.")
+            messagebox.showinfo("오류", "가급적 종료하여 주시고, 오류 해결 후 실행해주십시요.")
             self.close_button['state'] = 'normal'
 
     # 업로드 결과를 MySQL에 저장 함수
@@ -764,7 +763,6 @@ class FileListApp:
             now_time = datetime.now()
             now_time_round = now_time.replace(microsecond=0)
 
-            # total_files = len(self.file_tree.get_children())
             total_files = sum(
                 1 for item in self.file_tree.get_children() if "선택" in self.file_tree.item(item, 'values')[5])
 
@@ -788,6 +786,7 @@ class FileListApp:
                     file_type = "IU"
                 else:
                     file_type = "Unknown"
+
                 # 파일 건수가 빈 문자열인 경우 0으로 대체
                 if count == '':
                     count = 0
@@ -823,17 +822,14 @@ class FileListApp:
         def upload():
             self.insert_csv_to_influxdb(csv_file_path, filename)
 
-        # Create and start a new thread for the CSV file upload
         thread = threading.Thread(target=upload)
         thread.start()
 
     # csv file upload 함수
     def insert_csv_to_influxdb(self, csv_file_path, filename):
         client = self.get_influxdb_client()
-        # measurement = filename[:13]  # 적절한 측정값 이름 설정
-        measurement = "mi_data"  # 적절한 측정값 이름 설정
 
-        # print("insert_csv_to_influxdb==>measurement:",measurement)
+        measurement = "mi_data"  # 적절한 측정값 이름 설정
 
         # 파일명에서 eqp_num 추출
         eqp_num_from_filename = filename[7:10]
@@ -845,37 +841,24 @@ class FileListApp:
         print(eqp_num_from_filename, eqp_id, "eqp_num", "eqp_id")
         df = pd.read_csv(csv_file_path)
 
-        # print("insert_csv_to_influxdb==>df.columns:",df.columns)
-
         # 데이터프레임에 eqp_id 컬럼이 이미 존재하는지 확인하고, 없으면 추가
         if 'eqp_id' not in df.columns:
             df['eqp_id'] = eqp_id
         else:
             df['eqp_id'] = df['eqp_id'].fillna(eqp_id)  # 존재하는 경우, NaN 값만 채웁니다.
 
-        # print("insert_csv_to_influxdb==>1111111")
-        # print("insert_csv_to_influxdb==>1111111--2",df.iterrows())
-
         for _, row in df.iterrows():
-            # print("insert_csv_to_influxdb==>11111:",row['Time'])
             timestamp = self.parse_timestamp(row['Time'])
             if timestamp is None:
                 continue
-
-            # print("insert_csv_to_influxdb==>2222222")
 
             # eqp_id 컬럼 제외하고 나머지 값들을 float으로 변환하여 fields 딕셔너리에 추가
             fields = {key: float(value) for key, value in row.items() if
                       key != 'Time' and pd.notna(value) and key != 'eqp_id'}
             fields['eqp_id'] = str(row['eqp_id'])  # eqp_id를 fields에 추가
 
-            # print("insert_csv_to_influxdb==>3333333333")
-
             data = [{
                 "measurement": measurement,
-                # "tags": {
-                #     "eqp_id": str(row['eqp_id'])  # 태그로 eqp_id 추가
-                # },
                 "fields": fields,
                 "time": timestamp
             }]
@@ -884,11 +867,8 @@ class FileListApp:
                 client.write_points(data)
             except Exception as e:
                 logging.error(f"Failed to write data to InfluxDB: {e}")
-                # 여기서 추가적인 오류 처리 로직을 구현할 수 있습니다.
-                # 예: 실패한 데이터를 재시도 큐에 추가, 알림 메시지 전송 등
 
         client.close()
-        # print("InfluxUploadSuccess" ,client)
         mess = ("InfluxUploadSuccess" + str(client))
         logging.info(mess)
 
@@ -906,9 +886,6 @@ class FileListApp:
     def read_db_config(filename='connect.ini', section='InfluxDB'):
         parser = configparser.ConfigParser()
         parser.read(filename, 'UTF-8')
-
-        # messagebox.showinfo("Complete", f"{filename},{section}")
-
         db = {}
         if parser.has_section(section):
             items = parser.items(section)
@@ -929,34 +906,29 @@ class FileListApp:
         client = InfluxDBClient(host=db_config['host'],
                                 port=db_config['port'],
                                 database=db_config['database'])
-
-        # client = InfluxDBClient(host='localhost', port=8086, database='myTest')
-        # print(client)
         return client
 
     # 타임스탬프 변환 함수
     @staticmethod
     def parse_timestamp(timestamp_str):
-        # Check if the timestamp is a string and matches the new pattern
         if isinstance(timestamp_str, str) and re.match(r'\d{8}_\d{9}', timestamp_str):
-            # Extract the date and time parts from the timestamp
+
             date_part, time_part = timestamp_str.split('_')
-            # Parse the date part
+
             year = int(date_part[:4])
             month = int(date_part[4:6])
             day = int(date_part[6:8])
-            # Parse the time part
+
             hour = int(time_part[:2])
             minute = int(time_part[2:4])
             second = int(time_part[4:6])
-            millisecond = int(time_part[6:9])  # Extract millisecond
-            microsecond = millisecond * 1000  # Convert millisecond to microsecond
-            # Create a datetime object
+            millisecond = int(time_part[6:9])
+            microsecond = millisecond * 1000
+
             dt = datetime(year, month, day, hour, minute, second, microsecond)
-            # Return the ISO format of the datetime
+
             return dt.isoformat()
         else:
-            # If the format is not what we expect, return None
             return None
 
     # 진행상황 UI(프로그레스바 등) 업데이트 함수
@@ -964,17 +936,9 @@ class FileListApp:
         def update_ui():
             progress_value = int((self.processed_files_count / total_files) * 100)
             self.progress_bar["value"] = progress_value
-            # self.progressbar_label.config(text=f"{progress_value}%")
-            # self.total_files_label.config(text=f"Done/Total: {self.processed_files_count}/{total_files}")
             if self.processed_files_count < total_files:
                 self.master.after(100, update_ui)
             else:
-                # self.insert_data_to_influxdb()
-
-                # 업로드 완료 후 인디케이터 숨김
-
-                # messagebox.showinfo("Complete", f"Upload process completed!\n(총 소요 시간: {elapsed_time:.2f} 초)")
-                # 업로드가 완료된 후에 MySQL로 정보 업로드
                 try:
 
                     if self.signal == 1:
@@ -1010,14 +974,8 @@ class FileListApp:
         else:
             self.time = '15분이상'
 
-    def animate_loading1(self, width):
-        print()
-        # self.loading_canvas1.delete(self.loading_bar)  # 이전 막대 지우기
-        # self.loading_canvas2.delete(self.loading_bar1)  # 이전 막대 지우기
-        # self.loading_bar = self.loading_canvas1.create_rectangle(0, 0, width, 10, fill='grey', width=0)  # 새로운 막대 생성
-        # self.loading_bar = self.loading_canvas1.create_rectangle(0, 0, width, 10, fill='#00FF00', width=0)  # 새로운 막대 생성
-        # self.loading_bar1 = self.loading_canvas2.create_rectangle(0, 0, width, 2, fill='red', width=0)  # 새로운 막대 생성
-        # self.master.after(1, self.animate_loading1, (width + 10) % 700)  # 막대 이동 및 재귀 호출
+    def animate_loading1(self):
+        print("test")
 
     def progressing(self):
         if self.stop_signal == 1:
@@ -1038,15 +996,6 @@ class FileListApp:
         # 재귀적으로 자기 자신을 호출하여 반복 실행
         self.master.after(1, self.progressing)
 
-    # def update_label(self):
-    #     self.count += 1
-    #     self.total_files_label1.config(text="실행 시간 : " + str(self.count) + "초", font=("Helvetica", 9))
-    #     self.total_files_label1.after(1000, self.update_label)
-    #
-    # def update_eta(self):
-    #     self.total_files_label2.config(text="예상 시간 : 약" + str(self.time), font=("Helvetica", 9))
-    #     self.total_files_label2.after(1000, self.update_eta)
-
     def extract_data(self):
         thread1 = threading.Thread(target=self.progressing)
         thread1.start()
@@ -1059,7 +1008,6 @@ class FileListApp:
         self.file_tree2.delete("1")
         if self.fail_sig == 1:
             self.stop_signal = 1
-
             messagebox.showerror("실패", f"데이터 업로드 실패!")
         elif self.fail_sig == 0:
             self.stop_signal = 1
@@ -1132,6 +1080,7 @@ class FileListApp:
                 result_directory = '.\\추출 결과\\'
                 os.makedirs(result_directory, exist_ok=True)
 
+                """ 2024년 5월 23일 파일 설명 생성 관련 """
                 # # 파일명과 설명을 지정
                 # file_name = '파일 설명.txt'
                 #
@@ -1163,8 +1112,6 @@ class FileListApp:
             self.flag = False
         except Exception as E:
             self.flag = False
-            # E = result.stdout
-            # print('error : ', result.stdout)
             self.fail_flag = 1
             err_msg = traceback.format_exc()
             print(err_msg)

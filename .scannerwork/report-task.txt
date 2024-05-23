@@ -3,5 +3,5 @@ projectKey=wwwhyuk_Python_SonarCloud
 serverUrl=https://sonarcloud.io
 serverVersion=8.0.0.54573
 dashboardUrl=https://sonarcloud.io/dashboard?id=wwwhyuk_Python_SonarCloud
-ceTaskId=AY-kg-E6b4ohSKhfcieQ
-ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AY-kg-E6b4ohSKhfcieQ
+ceTaskId=AY-khciY2wgPHO1IkHMD
+ceTaskUrl=https://sonarcloud.io/api/ce/task?id=AY-khciY2wgPHO1IkHMD
