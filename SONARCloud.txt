@@ -1,0 +1,1 @@
+D:\python\sonar-scanner-cli-5.0.1.3006-windows\sonar-scanner-5.0.1.3006-windows\bin\sonar-scanner.bat  -D"sonar.organization=wwwhyuk" -D"sonar.projectKey=wwwhyuk_Python_SonarCloud" -D"sonar.sources=." -D"sonar.host.url=https://sonarcloud.io" -D"sonar.python.version=3.11"

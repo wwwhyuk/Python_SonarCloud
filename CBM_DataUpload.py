@@ -258,7 +258,7 @@ class FileListApp:
                 self.file_tree.tag_configure('unselected', background='white')
 
     def show_loading(self):
-        self.progressing(0)
+        self.progressing()
         self.animation_canvas.grid()
 
     def hide_loading(self):
@@ -315,7 +315,7 @@ class FileListApp:
         except mysql.connector.Error as error:
             print(f"MySQL로부터 데이터를 로드하는데 실패했습니다: {error}")
             logging.error(f"MySQL로부터 데이터를 로드하는데 실패했습니다: {error}")
-            pass
+
             return {}
 
     # 로그 파일 생성 및 로깅 초기화 함수
@@ -1656,7 +1656,7 @@ class FileListApp:
     def animations(self):
 
         self.stime = time.time()
-        self.progressing(0)
+        self.progressing()
         self.animate_loading1(0)
 
     def read_db_config3(self, filename='connect.ini', section='InfluxDB'):
@@ -2332,7 +2332,6 @@ class FileListApp:
         except Exception as E:
             # TraceBack : traceback.print_exc()
             print('에러 유형 : ', str(E))
-            print('상세 내용 : ', traceback.print_exc())
 
     def working_query(self, value, error_path, result_path):
         try:
